@@ -7,21 +7,29 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		864219267379732D1336210E /* Pods_Honey_Princess.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = A1A9863FA653CFF9B9AEFE8C /* Pods_Honey_Princess.framework */; };
 		A225124B1E0CEBEE00231427 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = A225124A1E0CEBEE00231427 /* AppDelegate.swift */; };
-		A225124D1E0CEBEE00231427 /* TimelineViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = A225124C1E0CEBEE00231427 /* TimelineViewController.swift */; };
 		A22512501E0CEBEE00231427 /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = A225124E1E0CEBEE00231427 /* Main.storyboard */; };
 		A22512521E0CEBEE00231427 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = A22512511E0CEBEE00231427 /* Assets.xcassets */; };
 		A22512551E0CEBEE00231427 /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = A22512531E0CEBEE00231427 /* LaunchScreen.storyboard */; };
+		A25072FC1E383140008DD866 /* MapKit.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = A25072FB1E383140008DD866 /* MapKit.framework */; };
+		A25072FE1E3832FE008DD866 /* MapViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = A25072FD1E3832FE008DD866 /* MapViewController.swift */; };
+		A2B90B9B1E274B73001F0817 /* GoogleService-Info.plist in Resources */ = {isa = PBXBuildFile; fileRef = A2B90B9A1E274B73001F0817 /* GoogleService-Info.plist */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
+		8B62FF14E0AAF4A8EFA38E58 /* Pods-Honey Princess.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-Honey Princess.debug.xcconfig"; path = "Pods/Target Support Files/Pods-Honey Princess/Pods-Honey Princess.debug.xcconfig"; sourceTree = "<group>"; };
+		A1029C46D3CCEB2D65CAA145 /* Pods-Honey Princess.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-Honey Princess.release.xcconfig"; path = "Pods/Target Support Files/Pods-Honey Princess/Pods-Honey Princess.release.xcconfig"; sourceTree = "<group>"; };
+		A1A9863FA653CFF9B9AEFE8C /* Pods_Honey_Princess.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_Honey_Princess.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 		A22512471E0CEBEE00231427 /* Honey Princess.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = "Honey Princess.app"; sourceTree = BUILT_PRODUCTS_DIR; };
 		A225124A1E0CEBEE00231427 /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
-		A225124C1E0CEBEE00231427 /* TimelineViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TimelineViewController.swift; sourceTree = "<group>"; };
 		A225124F1E0CEBEE00231427 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/Main.storyboard; sourceTree = "<group>"; };
 		A22512511E0CEBEE00231427 /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
 		A22512541E0CEBEE00231427 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/LaunchScreen.storyboard; sourceTree = "<group>"; };
 		A22512561E0CEBEE00231427 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
+		A25072FB1E383140008DD866 /* MapKit.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = MapKit.framework; path = System/Library/Frameworks/MapKit.framework; sourceTree = SDKROOT; };
+		A25072FD1E3832FE008DD866 /* MapViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = MapViewController.swift; sourceTree = "<group>"; };
+		A2B90B9A1E274B73001F0817 /* GoogleService-Info.plist */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.plist.xml; path = "GoogleService-Info.plist"; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -29,17 +37,30 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				A25072FC1E383140008DD866 /* MapKit.framework in Frameworks */,
+				864219267379732D1336210E /* Pods_Honey_Princess.framework in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
 /* End PBXFrameworksBuildPhase section */
 
 /* Begin PBXGroup section */
+		9D93361D0469A93EE0761A44 /* Pods */ = {
+			isa = PBXGroup;
+			children = (
+				8B62FF14E0AAF4A8EFA38E58 /* Pods-Honey Princess.debug.xcconfig */,
+				A1029C46D3CCEB2D65CAA145 /* Pods-Honey Princess.release.xcconfig */,
+			);
+			name = Pods;
+			sourceTree = "<group>";
+		};
 		A225123E1E0CEBEE00231427 = {
 			isa = PBXGroup;
 			children = (
 				A22512491E0CEBEE00231427 /* Honey Princess */,
 				A22512481E0CEBEE00231427 /* Products */,
+				9D93361D0469A93EE0761A44 /* Pods */,
+				E2F5F2016824608221A360AB /* Frameworks */,
 			);
 			sourceTree = "<group>";
 		};
@@ -55,13 +76,39 @@
 			isa = PBXGroup;
 			children = (
 				A225124A1E0CEBEE00231427 /* AppDelegate.swift */,
-				A225124C1E0CEBEE00231427 /* TimelineViewController.swift */,
+				A25072FF1E38330D008DD866 /* Controllers */,
 				A225124E1E0CEBEE00231427 /* Main.storyboard */,
+				A25073001E3837E9008DD866 /* Helpers */,
 				A22512511E0CEBEE00231427 /* Assets.xcassets */,
 				A22512531E0CEBEE00231427 /* LaunchScreen.storyboard */,
 				A22512561E0CEBEE00231427 /* Info.plist */,
+				A2B90B9A1E274B73001F0817 /* GoogleService-Info.plist */,
 			);
 			path = "Honey Princess";
+			sourceTree = "<group>";
+		};
+		A25072FF1E38330D008DD866 /* Controllers */ = {
+			isa = PBXGroup;
+			children = (
+				A25072FD1E3832FE008DD866 /* MapViewController.swift */,
+			);
+			name = Controllers;
+			sourceTree = "<group>";
+		};
+		A25073001E3837E9008DD866 /* Helpers */ = {
+			isa = PBXGroup;
+			children = (
+			);
+			name = Helpers;
+			sourceTree = "<group>";
+		};
+		E2F5F2016824608221A360AB /* Frameworks */ = {
+			isa = PBXGroup;
+			children = (
+				A25072FB1E383140008DD866 /* MapKit.framework */,
+				A1A9863FA653CFF9B9AEFE8C /* Pods_Honey_Princess.framework */,
+			);
+			name = Frameworks;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -71,9 +118,12 @@
 			isa = PBXNativeTarget;
 			buildConfigurationList = A22512591E0CEBEE00231427 /* Build configuration list for PBXNativeTarget "Honey Princess" */;
 			buildPhases = (
+				F3DFE64CB38256050BEA49FB /* [CP] Check Pods Manifest.lock */,
 				A22512431E0CEBEE00231427 /* Sources */,
 				A22512441E0CEBEE00231427 /* Frameworks */,
 				A22512451E0CEBEE00231427 /* Resources */,
+				80F262FC6FCFCAC444011E5E /* [CP] Embed Pods Frameworks */,
+				627DCBB49079B07D8D7F1F67 /* [CP] Copy Pods Resources */,
 			);
 			buildRules = (
 			);
@@ -98,6 +148,11 @@
 						CreatedOnToolsVersion = 8.2.1;
 						DevelopmentTeam = WZ4NEVB3RP;
 						ProvisioningStyle = Automatic;
+						SystemCapabilities = {
+							com.apple.Maps.iOS = {
+								enabled = 1;
+							};
+						};
 					};
 				};
 			};
@@ -126,19 +181,68 @@
 			files = (
 				A22512551E0CEBEE00231427 /* LaunchScreen.storyboard in Resources */,
 				A22512521E0CEBEE00231427 /* Assets.xcassets in Resources */,
+				A2B90B9B1E274B73001F0817 /* GoogleService-Info.plist in Resources */,
 				A22512501E0CEBEE00231427 /* Main.storyboard in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
 /* End PBXResourcesBuildPhase section */
 
+/* Begin PBXShellScriptBuildPhase section */
+		627DCBB49079B07D8D7F1F67 /* [CP] Copy Pods Resources */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputPaths = (
+			);
+			name = "[CP] Copy Pods Resources";
+			outputPaths = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "\"${SRCROOT}/Pods/Target Support Files/Pods-Honey Princess/Pods-Honey Princess-resources.sh\"\n";
+			showEnvVarsInLog = 0;
+		};
+		80F262FC6FCFCAC444011E5E /* [CP] Embed Pods Frameworks */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputPaths = (
+			);
+			name = "[CP] Embed Pods Frameworks";
+			outputPaths = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "\"${SRCROOT}/Pods/Target Support Files/Pods-Honey Princess/Pods-Honey Princess-frameworks.sh\"\n";
+			showEnvVarsInLog = 0;
+		};
+		F3DFE64CB38256050BEA49FB /* [CP] Check Pods Manifest.lock */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputPaths = (
+			);
+			name = "[CP] Check Pods Manifest.lock";
+			outputPaths = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "diff \"${PODS_ROOT}/../Podfile.lock\" \"${PODS_ROOT}/Manifest.lock\" > /dev/null\nif [ $? != 0 ] ; then\n    # print error to STDERR\n    echo \"error: The sandbox is not in sync with the Podfile.lock. Run 'pod install' or update your CocoaPods installation.\" >&2\n    exit 1\nfi\n";
+			showEnvVarsInLog = 0;
+		};
+/* End PBXShellScriptBuildPhase section */
+
 /* Begin PBXSourcesBuildPhase section */
 		A22512431E0CEBEE00231427 /* Sources */ = {
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				A225124D1E0CEBEE00231427 /* TimelineViewController.swift in Sources */,
 				A225124B1E0CEBEE00231427 /* AppDelegate.swift in Sources */,
+				A25072FE1E3832FE008DD866 /* MapViewController.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -257,6 +361,7 @@
 		};
 		A225125A1E0CEBEE00231427 /* Debug */ = {
 			isa = XCBuildConfiguration;
+			baseConfigurationReference = 8B62FF14E0AAF4A8EFA38E58 /* Pods-Honey Princess.debug.xcconfig */;
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				DEVELOPMENT_TEAM = WZ4NEVB3RP;
@@ -270,6 +375,7 @@
 		};
 		A225125B1E0CEBEE00231427 /* Release */ = {
 			isa = XCBuildConfiguration;
+			baseConfigurationReference = A1029C46D3CCEB2D65CAA145 /* Pods-Honey Princess.release.xcconfig */;
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				DEVELOPMENT_TEAM = WZ4NEVB3RP;
@@ -300,6 +406,7 @@
 				A225125B1E0CEBEE00231427 /* Release */,
 			);
 			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
 		};
 /* End XCConfigurationList section */
 	};
