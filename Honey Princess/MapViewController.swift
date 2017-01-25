@@ -15,6 +15,7 @@ class MapViewController: UIViewController {
     let locationManager = CLLocationManager()
     let status = CLLocationManager.authorizationStatus()
     var circleRenderer = MKCircleRenderer()
+    let geocoder = CLGeocoder()
     
     
     // MARK: - IBOutlets
@@ -27,6 +28,14 @@ class MapViewController: UIViewController {
         prepareMapView()
         prepareLocationManager()
         checkLocationStatus()
+        
+//        geocoder.geocodeAddressString("1 Infinite Loop, CA, USA") { (placemarks: [CLPlacemark]?, error: Error?) in
+//            print(placemarks?.first?.location)
+//        }
+        
+        let pin = EventAnnotation(title: "hey", subtitle: "subtitle here", coordinate: CLLocationCoordinate2D(latitude: 37.787359, longitude: -122.408227))
+        mapView.addAnnotation(pin)
+        
     }
     
     // MARK: - Preparations
@@ -40,6 +49,7 @@ class MapViewController: UIViewController {
         locationManager.requestWhenInUseAuthorization()
         locationManager.startUpdatingLocation()
         mapView.showsUserLocation = true
+
     }
     
     func checkLocationStatus() {
@@ -68,10 +78,15 @@ class MapViewController: UIViewController {
             print("System can't track regions")
         }
     }
+    
+
 
 }
 
 extension MapViewController: MKMapViewDelegate {
+//    func mapView(_ mapView: MKMapView, viewFor annotation: MKAnnotation) -> MKAnnotationView? {
+//        <#code#>
+//    }
 }
 
 extension MapViewController: CLLocationManagerDelegate {
@@ -82,7 +97,7 @@ extension MapViewController: CLLocationManagerDelegate {
     }
     
     func locationManager(_ manager: CLLocationManager, didUpdateLocations locations: [CLLocation]) {
-        print(locations)
+//        print(locations)
         
         let location = locations.last
         

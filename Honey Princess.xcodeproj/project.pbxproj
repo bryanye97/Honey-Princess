@@ -14,6 +14,10 @@
 		A22512551E0CEBEE00231427 /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = A22512531E0CEBEE00231427 /* LaunchScreen.storyboard */; };
 		A25072FC1E383140008DD866 /* MapKit.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = A25072FB1E383140008DD866 /* MapKit.framework */; };
 		A25072FE1E3832FE008DD866 /* MapViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = A25072FD1E3832FE008DD866 /* MapViewController.swift */; };
+		A25073031E383A55008DD866 /* EventAnnotation.swift in Sources */ = {isa = PBXBuildFile; fileRef = A25073021E383A55008DD866 /* EventAnnotation.swift */; };
+		A25073051E383B42008DD866 /* CoreData.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = A25073041E383B42008DD866 /* CoreData.framework */; };
+		A25073081E383B77008DD866 /* HoneyProcess.xcdatamodeld in Sources */ = {isa = PBXBuildFile; fileRef = A25073061E383B77008DD866 /* HoneyProcess.xcdatamodeld */; };
+		A250730A1E386FD7008DD866 /* DatabaseHelper.swift in Sources */ = {isa = PBXBuildFile; fileRef = A25073091E386FD7008DD866 /* DatabaseHelper.swift */; };
 		A2B90B9B1E274B73001F0817 /* GoogleService-Info.plist in Resources */ = {isa = PBXBuildFile; fileRef = A2B90B9A1E274B73001F0817 /* GoogleService-Info.plist */; };
 /* End PBXBuildFile section */
 
@@ -29,6 +33,10 @@
 		A22512561E0CEBEE00231427 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		A25072FB1E383140008DD866 /* MapKit.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = MapKit.framework; path = System/Library/Frameworks/MapKit.framework; sourceTree = SDKROOT; };
 		A25072FD1E3832FE008DD866 /* MapViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = MapViewController.swift; sourceTree = "<group>"; };
+		A25073021E383A55008DD866 /* EventAnnotation.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = EventAnnotation.swift; sourceTree = "<group>"; };
+		A25073041E383B42008DD866 /* CoreData.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = CoreData.framework; path = System/Library/Frameworks/CoreData.framework; sourceTree = SDKROOT; };
+		A25073071E383B77008DD866 /* HoneyProcess.xcdatamodel */ = {isa = PBXFileReference; lastKnownFileType = wrapper.xcdatamodel; path = HoneyProcess.xcdatamodel; sourceTree = "<group>"; };
+		A25073091E386FD7008DD866 /* DatabaseHelper.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = DatabaseHelper.swift; sourceTree = "<group>"; };
 		A2B90B9A1E274B73001F0817 /* GoogleService-Info.plist */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.plist.xml; path = "GoogleService-Info.plist"; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
@@ -37,6 +45,7 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				A25073051E383B42008DD866 /* CoreData.framework in Frameworks */,
 				A25072FC1E383140008DD866 /* MapKit.framework in Frameworks */,
 				864219267379732D1336210E /* Pods_Honey_Princess.framework in Frameworks */,
 			);
@@ -78,10 +87,12 @@
 				A225124A1E0CEBEE00231427 /* AppDelegate.swift */,
 				A25072FF1E38330D008DD866 /* Controllers */,
 				A225124E1E0CEBEE00231427 /* Main.storyboard */,
+				A25073011E383A22008DD866 /* Views */,
 				A25073001E3837E9008DD866 /* Helpers */,
 				A22512511E0CEBEE00231427 /* Assets.xcassets */,
 				A22512531E0CEBEE00231427 /* LaunchScreen.storyboard */,
 				A22512561E0CEBEE00231427 /* Info.plist */,
+				A25073061E383B77008DD866 /* HoneyProcess.xcdatamodeld */,
 				A2B90B9A1E274B73001F0817 /* GoogleService-Info.plist */,
 			);
 			path = "Honey Princess";
@@ -98,13 +109,24 @@
 		A25073001E3837E9008DD866 /* Helpers */ = {
 			isa = PBXGroup;
 			children = (
+				A25073091E386FD7008DD866 /* DatabaseHelper.swift */,
 			);
 			name = Helpers;
+			sourceTree = "<group>";
+		};
+		A25073011E383A22008DD866 /* Views */ = {
+			isa = PBXGroup;
+			children = (
+				A25073021E383A55008DD866 /* EventAnnotation.swift */,
+			);
+			name = Views;
+			path = ..;
 			sourceTree = "<group>";
 		};
 		E2F5F2016824608221A360AB /* Frameworks */ = {
 			isa = PBXGroup;
 			children = (
+				A25073041E383B42008DD866 /* CoreData.framework */,
 				A25072FB1E383140008DD866 /* MapKit.framework */,
 				A1A9863FA653CFF9B9AEFE8C /* Pods_Honey_Princess.framework */,
 			);
@@ -242,7 +264,10 @@
 			buildActionMask = 2147483647;
 			files = (
 				A225124B1E0CEBEE00231427 /* AppDelegate.swift in Sources */,
+				A250730A1E386FD7008DD866 /* DatabaseHelper.swift in Sources */,
 				A25072FE1E3832FE008DD866 /* MapViewController.swift in Sources */,
+				A25073031E383A55008DD866 /* EventAnnotation.swift in Sources */,
+				A25073081E383B77008DD866 /* HoneyProcess.xcdatamodeld in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -409,6 +434,20 @@
 			defaultConfigurationName = Release;
 		};
 /* End XCConfigurationList section */
+
+/* Begin XCVersionGroup section */
+		A25073061E383B77008DD866 /* HoneyProcess.xcdatamodeld */ = {
+			isa = XCVersionGroup;
+			children = (
+				A25073071E383B77008DD866 /* HoneyProcess.xcdatamodel */,
+			);
+			currentVersion = A25073071E383B77008DD866 /* HoneyProcess.xcdatamodel */;
+			name = HoneyProcess.xcdatamodeld;
+			path = ../HoneyProcess.xcdatamodeld;
+			sourceTree = "<group>";
+			versionGroupType = wrapper.xcdatamodel;
+		};
+/* End XCVersionGroup section */
 	};
 	rootObject = A225123F1E0CEBEE00231427 /* Project object */;
 }
