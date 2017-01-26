@@ -18,6 +18,8 @@
 		A25073051E383B42008DD866 /* CoreData.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = A25073041E383B42008DD866 /* CoreData.framework */; };
 		A25073081E383B77008DD866 /* HoneyProcess.xcdatamodeld in Sources */ = {isa = PBXBuildFile; fileRef = A25073061E383B77008DD866 /* HoneyProcess.xcdatamodeld */; };
 		A250730A1E386FD7008DD866 /* DatabaseHelper.swift in Sources */ = {isa = PBXBuildFile; fileRef = A25073091E386FD7008DD866 /* DatabaseHelper.swift */; };
+		A250730C1E38752B008DD866 /* LocationSearchViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = A250730B1E38752B008DD866 /* LocationSearchViewController.swift */; };
+		A250730E1E3883C1008DD866 /* EventHandler.swift in Sources */ = {isa = PBXBuildFile; fileRef = A250730D1E3883C1008DD866 /* EventHandler.swift */; };
 		A2B90B9B1E274B73001F0817 /* GoogleService-Info.plist in Resources */ = {isa = PBXBuildFile; fileRef = A2B90B9A1E274B73001F0817 /* GoogleService-Info.plist */; };
 /* End PBXBuildFile section */
 
@@ -37,6 +39,8 @@
 		A25073041E383B42008DD866 /* CoreData.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = CoreData.framework; path = System/Library/Frameworks/CoreData.framework; sourceTree = SDKROOT; };
 		A25073071E383B77008DD866 /* HoneyProcess.xcdatamodel */ = {isa = PBXFileReference; lastKnownFileType = wrapper.xcdatamodel; path = HoneyProcess.xcdatamodel; sourceTree = "<group>"; };
 		A25073091E386FD7008DD866 /* DatabaseHelper.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = DatabaseHelper.swift; sourceTree = "<group>"; };
+		A250730B1E38752B008DD866 /* LocationSearchViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = LocationSearchViewController.swift; sourceTree = "<group>"; };
+		A250730D1E3883C1008DD866 /* EventHandler.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = EventHandler.swift; sourceTree = "<group>"; };
 		A2B90B9A1E274B73001F0817 /* GoogleService-Info.plist */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.plist.xml; path = "GoogleService-Info.plist"; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
@@ -86,10 +90,10 @@
 			children = (
 				A225124A1E0CEBEE00231427 /* AppDelegate.swift */,
 				A25072FF1E38330D008DD866 /* Controllers */,
-				A225124E1E0CEBEE00231427 /* Main.storyboard */,
 				A25073011E383A22008DD866 /* Views */,
 				A25073001E3837E9008DD866 /* Helpers */,
 				A22512511E0CEBEE00231427 /* Assets.xcassets */,
+				A225124E1E0CEBEE00231427 /* Main.storyboard */,
 				A22512531E0CEBEE00231427 /* LaunchScreen.storyboard */,
 				A22512561E0CEBEE00231427 /* Info.plist */,
 				A25073061E383B77008DD866 /* HoneyProcess.xcdatamodeld */,
@@ -102,6 +106,7 @@
 			isa = PBXGroup;
 			children = (
 				A25072FD1E3832FE008DD866 /* MapViewController.swift */,
+				A250730B1E38752B008DD866 /* LocationSearchViewController.swift */,
 			);
 			name = Controllers;
 			sourceTree = "<group>";
@@ -110,6 +115,7 @@
 			isa = PBXGroup;
 			children = (
 				A25073091E386FD7008DD866 /* DatabaseHelper.swift */,
+				A250730D1E3883C1008DD866 /* EventHandler.swift */,
 			);
 			name = Helpers;
 			sourceTree = "<group>";
@@ -264,6 +270,8 @@
 			buildActionMask = 2147483647;
 			files = (
 				A225124B1E0CEBEE00231427 /* AppDelegate.swift in Sources */,
+				A250730E1E3883C1008DD866 /* EventHandler.swift in Sources */,
+				A250730C1E38752B008DD866 /* LocationSearchViewController.swift in Sources */,
 				A250730A1E386FD7008DD866 /* DatabaseHelper.swift in Sources */,
 				A25072FE1E3832FE008DD866 /* MapViewController.swift in Sources */,
 				A25073031E383A55008DD866 /* EventAnnotation.swift in Sources */,

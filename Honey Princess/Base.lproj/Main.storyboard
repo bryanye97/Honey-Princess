@@ -1,5 +1,5 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="11762" systemVersion="16D32" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" colorMatched="YES" initialViewController="BYZ-38-t0r">
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="11762" systemVersion="16D32" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" colorMatched="YES" initialViewController="Sf4-Ec-Mki">
     <device id="retina4_7" orientation="portrait">
         <adaptation id="fullscreen"/>
     </device>
@@ -24,22 +24,112 @@
                             <mapView clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" mapType="standard" translatesAutoresizingMaskIntoConstraints="NO" id="p4a-jJ-al3">
                                 <rect key="frame" x="0.0" y="0.0" width="375" height="667"/>
                             </mapView>
+                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="Q7F-17-Tz1">
+                                <rect key="frame" x="138" y="569" width="98" height="98"/>
+                                <state key="normal" image="car"/>
+                                <connections>
+                                    <action selector="recenterMap:" destination="BYZ-38-t0r" eventType="touchUpInside" id="fLa-Dj-aeB"/>
+                                </connections>
+                            </button>
                         </subviews>
                         <color key="backgroundColor" red="1" green="1" blue="1" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                         <constraints>
                             <constraint firstAttribute="trailing" secondItem="p4a-jJ-al3" secondAttribute="trailing" id="9HO-0p-3D2"/>
                             <constraint firstItem="p4a-jJ-al3" firstAttribute="top" secondItem="8bC-Xf-vdC" secondAttribute="top" id="JB8-Xn-9RR"/>
                             <constraint firstItem="wfy-db-euE" firstAttribute="top" secondItem="p4a-jJ-al3" secondAttribute="bottom" id="MMK-0i-OUQ"/>
+                            <constraint firstItem="Q7F-17-Tz1" firstAttribute="centerX" secondItem="8bC-Xf-vdC" secondAttribute="centerX" id="Ou9-sf-vAX"/>
                             <constraint firstItem="p4a-jJ-al3" firstAttribute="leading" secondItem="8bC-Xf-vdC" secondAttribute="leading" id="VPY-Rt-VSW"/>
+                            <constraint firstItem="wfy-db-euE" firstAttribute="top" secondItem="Q7F-17-Tz1" secondAttribute="bottom" id="hSb-ZP-1Bx"/>
                         </constraints>
                     </view>
+                    <navigationItem key="navigationItem" id="ilc-T3-Dyh"/>
                     <connections>
                         <outlet property="mapView" destination="p4a-jJ-al3" id="ihZ-t3-G2c"/>
                     </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="dkx-z0-nzr" sceneMemberID="firstResponder"/>
             </objects>
+            <point key="canvasLocation" x="1076" y="138.98050974512745"/>
+        </scene>
+        <!--Location Search View Controller-->
+        <scene sceneID="eaG-kd-g95">
+            <objects>
+                <viewController storyboardIdentifier="LocationSearch" id="mIO-9s-RrS" customClass="LocationSearchViewController" customModule="Honey_Princess" customModuleProvider="target" sceneMemberID="viewController">
+                    <layoutGuides>
+                        <viewControllerLayoutGuide type="top" id="yGV-k9-TBp"/>
+                        <viewControllerLayoutGuide type="bottom" id="ena-ha-NS8"/>
+                    </layoutGuides>
+                    <view key="view" contentMode="scaleToFill" id="mIz-At-jhL">
+                        <rect key="frame" x="0.0" y="0.0" width="375" height="667"/>
+                        <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <subviews>
+                            <tableView clipsSubviews="YES" contentMode="scaleToFill" alwaysBounceVertical="YES" dataMode="prototypes" style="plain" separatorStyle="default" rowHeight="44" sectionHeaderHeight="28" sectionFooterHeight="28" translatesAutoresizingMaskIntoConstraints="NO" id="pr3-j3-knr">
+                                <rect key="frame" x="0.0" y="20" width="375" height="647"/>
+                                <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                                <prototypes>
+                                    <tableViewCell clipsSubviews="YES" contentMode="scaleToFill" selectionStyle="blue" hidesAccessoryWhenEditing="NO" indentationLevel="1" indentationWidth="0.0" reuseIdentifier="cell" textLabel="zd6-KA-uNn" detailTextLabel="eda-7F-w69" style="IBUITableViewCellStyleSubtitle" id="Rs4-ml-hOw">
+                                        <rect key="frame" x="0.0" y="28" width="375" height="44"/>
+                                        <autoresizingMask key="autoresizingMask"/>
+                                        <tableViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" tableViewCell="Rs4-ml-hOw" id="Jav-bo-8Pa">
+                                            <rect key="frame" x="0.0" y="0.0" width="375" height="43"/>
+                                            <autoresizingMask key="autoresizingMask"/>
+                                            <subviews>
+                                                <label opaque="NO" multipleTouchEnabled="YES" contentMode="left" text="Title" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" id="zd6-KA-uNn">
+                                                    <rect key="frame" x="15" y="4" width="34" height="21"/>
+                                                    <autoresizingMask key="autoresizingMask"/>
+                                                    <fontDescription key="fontDescription" type="system" pointSize="17"/>
+                                                    <nil key="textColor"/>
+                                                    <nil key="highlightedColor"/>
+                                                </label>
+                                                <label opaque="NO" multipleTouchEnabled="YES" contentMode="left" text="Subtitle" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" id="eda-7F-w69">
+                                                    <rect key="frame" x="15" y="25" width="44" height="15"/>
+                                                    <autoresizingMask key="autoresizingMask"/>
+                                                    <fontDescription key="fontDescription" type="system" pointSize="12"/>
+                                                    <nil key="textColor"/>
+                                                    <nil key="highlightedColor"/>
+                                                </label>
+                                            </subviews>
+                                        </tableViewCellContentView>
+                                    </tableViewCell>
+                                </prototypes>
+                            </tableView>
+                        </subviews>
+                        <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                        <constraints>
+                            <constraint firstItem="ena-ha-NS8" firstAttribute="top" secondItem="pr3-j3-knr" secondAttribute="bottom" id="0is-fe-g1X"/>
+                            <constraint firstItem="pr3-j3-knr" firstAttribute="leading" secondItem="mIz-At-jhL" secondAttribute="leading" id="Fz3-YK-YRE"/>
+                            <constraint firstAttribute="trailing" secondItem="pr3-j3-knr" secondAttribute="trailing" id="JbG-4D-FT0"/>
+                            <constraint firstItem="pr3-j3-knr" firstAttribute="top" secondItem="yGV-k9-TBp" secondAttribute="bottom" id="uuD-fM-a9f"/>
+                        </constraints>
+                    </view>
+                    <connections>
+                        <outlet property="tableView" destination="pr3-j3-knr" id="BPU-6b-HBs"/>
+                    </connections>
+                </viewController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="ghd-Bl-Zgy" userLabel="First Responder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="1860" y="138.98050974512745"/>
+        </scene>
+        <!--Navigation Controller-->
+        <scene sceneID="S0z-Xc-PBd">
+            <objects>
+                <navigationController automaticallyAdjustsScrollViewInsets="NO" id="Sf4-Ec-Mki" sceneMemberID="viewController">
+                    <toolbarItems/>
+                    <navigationBar key="navigationBar" contentMode="scaleToFill" id="Kqp-6F-QpP">
+                        <rect key="frame" x="0.0" y="0.0" width="375" height="44"/>
+                        <autoresizingMask key="autoresizingMask"/>
+                    </navigationBar>
+                    <nil name="viewControllers"/>
+                    <connections>
+                        <segue destination="BYZ-38-t0r" kind="relationship" relationship="rootViewController" id="gJJ-hk-qWk"/>
+                    </connections>
+                </navigationController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="c79-jM-tBl" userLabel="First Responder" sceneMemberID="firstResponder"/>
+            </objects>
             <point key="canvasLocation" x="136.80000000000001" y="138.98050974512745"/>
         </scene>
     </scenes>
+    <resources>
+        <image name="car" width="98" height="98"/>
+    </resources>
 </document>

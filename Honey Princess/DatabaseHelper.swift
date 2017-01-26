@@ -23,8 +23,8 @@ class DatabaseHelper {
         return FIRDatabase.database().reference()
     }
     
-    var locationsRef: FIRDatabaseReference {
-        return databaseRef.child("Locations")
+    var eventsRef: FIRDatabaseReference {
+        return databaseRef.child("Events")
     }
     
 }
