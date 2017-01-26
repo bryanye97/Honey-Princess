@@ -10,6 +10,7 @@ import UIKit
 import MapKit
 
 
+
 protocol HandleMapSearch {
     func dropPinZoomIn(placemark:MKPlacemark)
 }
@@ -117,6 +118,22 @@ class MapViewController: UIViewController {
     
     @IBAction func recenterMap(_ sender: UIButton) {
         locationManager.startUpdatingLocation()
+        if AuthHelper.Instance.logOut() {
+            print("logged out")
+            AuthHelper.Instance.logOutOfFacebook()
+            showLoginScreen()
+        }
+    }
+    
+    //MARK: - Show Login Screen
+    func showLoginScreen() {
+        let appDelegateTemp = UIApplication.shared.delegate
+        let storyboard = UIStoryboard(name: "Main", bundle: nil)
+        let loginViewController = storyboard.instantiateViewController(withIdentifier: "LoginViewController")
+        
+        appDelegateTemp?.window??.makeKeyAndVisible()
+        
+        appDelegateTemp?.window??.rootViewController?.present(loginViewController, animated: true, completion: nil)
     }
     
 }

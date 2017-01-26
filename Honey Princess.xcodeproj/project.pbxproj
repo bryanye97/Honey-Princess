@@ -21,6 +21,7 @@
 		A250730C1E38752B008DD866 /* LocationSearchViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = A250730B1E38752B008DD866 /* LocationSearchViewController.swift */; };
 		A250730E1E3883C1008DD866 /* EventHandler.swift in Sources */ = {isa = PBXBuildFile; fileRef = A250730D1E3883C1008DD866 /* EventHandler.swift */; };
 		A25073101E397C70008DD866 /* LoginViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = A250730F1E397C70008DD866 /* LoginViewController.swift */; };
+		A25073131E39978D008DD866 /* AuthHelper.swift in Sources */ = {isa = PBXBuildFile; fileRef = A25073121E39978D008DD866 /* AuthHelper.swift */; };
 		A2B90B9B1E274B73001F0817 /* GoogleService-Info.plist in Resources */ = {isa = PBXBuildFile; fileRef = A2B90B9A1E274B73001F0817 /* GoogleService-Info.plist */; };
 /* End PBXBuildFile section */
 
@@ -44,6 +45,7 @@
 		A250730D1E3883C1008DD866 /* EventHandler.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = EventHandler.swift; sourceTree = "<group>"; };
 		A250730F1E397C70008DD866 /* LoginViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = LoginViewController.swift; sourceTree = "<group>"; };
 		A25073111E3985B4008DD866 /* Honey Princess.entitlements */ = {isa = PBXFileReference; lastKnownFileType = text.plist.entitlements; path = "Honey Princess.entitlements"; sourceTree = "<group>"; };
+		A25073121E39978D008DD866 /* AuthHelper.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = AuthHelper.swift; sourceTree = "<group>"; };
 		A2B90B9A1E274B73001F0817 /* GoogleService-Info.plist */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.plist.xml; path = "GoogleService-Info.plist"; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
@@ -121,6 +123,7 @@
 			children = (
 				A25073091E386FD7008DD866 /* DatabaseHelper.swift */,
 				A250730D1E3883C1008DD866 /* EventHandler.swift */,
+				A25073121E39978D008DD866 /* AuthHelper.swift */,
 			);
 			name = Helpers;
 			sourceTree = "<group>";
@@ -285,6 +288,7 @@
 				A25072FE1E3832FE008DD866 /* MapViewController.swift in Sources */,
 				A25073031E383A55008DD866 /* EventAnnotation.swift in Sources */,
 				A25073081E383B77008DD866 /* HoneyProcess.xcdatamodeld in Sources */,
+				A25073131E39978D008DD866 /* AuthHelper.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};

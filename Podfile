@@ -7,7 +7,8 @@ target 'Honey Princess' do
 
   # Pods for Honey Princess
   pod 'Firebase/Core'
-  pod 'Firebase/Database’
+  pod 'Firebase/Database'
+  pod 'Firebase/Auth'
   pod 'FBSDKCoreKit'
   pod 'FBSDKShareKit'
   pod 'FBSDKLoginKit'
