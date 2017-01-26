@@ -26,5 +26,4 @@ class DatabaseHelper {
     var eventsRef: FIRDatabaseReference {
         return databaseRef.child("Events")
     }
-    
 }

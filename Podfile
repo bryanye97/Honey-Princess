@@ -8,5 +8,8 @@ target 'Honey Princess' do
   # Pods for Honey Princess
   pod 'Firebase/Core'
   pod 'Firebase/Database’
+  pod 'FBSDKCoreKit'
+  pod 'FBSDKShareKit'
+  pod 'FBSDKLoginKit'
 
 end

@@ -20,6 +20,7 @@
 		A250730A1E386FD7008DD866 /* DatabaseHelper.swift in Sources */ = {isa = PBXBuildFile; fileRef = A25073091E386FD7008DD866 /* DatabaseHelper.swift */; };
 		A250730C1E38752B008DD866 /* LocationSearchViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = A250730B1E38752B008DD866 /* LocationSearchViewController.swift */; };
 		A250730E1E3883C1008DD866 /* EventHandler.swift in Sources */ = {isa = PBXBuildFile; fileRef = A250730D1E3883C1008DD866 /* EventHandler.swift */; };
+		A25073101E397C70008DD866 /* LoginViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = A250730F1E397C70008DD866 /* LoginViewController.swift */; };
 		A2B90B9B1E274B73001F0817 /* GoogleService-Info.plist in Resources */ = {isa = PBXBuildFile; fileRef = A2B90B9A1E274B73001F0817 /* GoogleService-Info.plist */; };
 /* End PBXBuildFile section */
 
@@ -41,6 +42,8 @@
 		A25073091E386FD7008DD866 /* DatabaseHelper.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = DatabaseHelper.swift; sourceTree = "<group>"; };
 		A250730B1E38752B008DD866 /* LocationSearchViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = LocationSearchViewController.swift; sourceTree = "<group>"; };
 		A250730D1E3883C1008DD866 /* EventHandler.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = EventHandler.swift; sourceTree = "<group>"; };
+		A250730F1E397C70008DD866 /* LoginViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = LoginViewController.swift; sourceTree = "<group>"; };
+		A25073111E3985B4008DD866 /* Honey Princess.entitlements */ = {isa = PBXFileReference; lastKnownFileType = text.plist.entitlements; path = "Honey Princess.entitlements"; sourceTree = "<group>"; };
 		A2B90B9A1E274B73001F0817 /* GoogleService-Info.plist */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.plist.xml; path = "GoogleService-Info.plist"; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
@@ -88,6 +91,7 @@
 		A22512491E0CEBEE00231427 /* Honey Princess */ = {
 			isa = PBXGroup;
 			children = (
+				A25073111E3985B4008DD866 /* Honey Princess.entitlements */,
 				A225124A1E0CEBEE00231427 /* AppDelegate.swift */,
 				A25072FF1E38330D008DD866 /* Controllers */,
 				A25073011E383A22008DD866 /* Views */,
@@ -105,6 +109,7 @@
 		A25072FF1E38330D008DD866 /* Controllers */ = {
 			isa = PBXGroup;
 			children = (
+				A250730F1E397C70008DD866 /* LoginViewController.swift */,
 				A25072FD1E3832FE008DD866 /* MapViewController.swift */,
 				A250730B1E38752B008DD866 /* LocationSearchViewController.swift */,
 			);
@@ -177,6 +182,9 @@
 						DevelopmentTeam = WZ4NEVB3RP;
 						ProvisioningStyle = Automatic;
 						SystemCapabilities = {
+							com.apple.Keychain = {
+								enabled = 1;
+							};
 							com.apple.Maps.iOS = {
 								enabled = 1;
 							};
@@ -273,6 +281,7 @@
 				A250730E1E3883C1008DD866 /* EventHandler.swift in Sources */,
 				A250730C1E38752B008DD866 /* LocationSearchViewController.swift in Sources */,
 				A250730A1E386FD7008DD866 /* DatabaseHelper.swift in Sources */,
+				A25073101E397C70008DD866 /* LoginViewController.swift in Sources */,
 				A25072FE1E3832FE008DD866 /* MapViewController.swift in Sources */,
 				A25073031E383A55008DD866 /* EventAnnotation.swift in Sources */,
 				A25073081E383B77008DD866 /* HoneyProcess.xcdatamodeld in Sources */,
@@ -397,6 +406,7 @@
 			baseConfigurationReference = 8B62FF14E0AAF4A8EFA38E58 /* Pods-Honey Princess.debug.xcconfig */;
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
+				CODE_SIGN_ENTITLEMENTS = "Honey Princess/Honey Princess.entitlements";
 				DEVELOPMENT_TEAM = WZ4NEVB3RP;
 				INFOPLIST_FILE = "Honey Princess/Info.plist";
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
@@ -411,6 +421,7 @@
 			baseConfigurationReference = A1029C46D3CCEB2D65CAA145 /* Pods-Honey Princess.release.xcconfig */;
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
+				CODE_SIGN_ENTITLEMENTS = "Honey Princess/Honey Princess.entitlements";
 				DEVELOPMENT_TEAM = WZ4NEVB3RP;
 				INFOPLIST_FILE = "Honey Princess/Info.plist";
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
