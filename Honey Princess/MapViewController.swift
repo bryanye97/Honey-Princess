@@ -9,8 +9,6 @@
 import UIKit
 import MapKit
 
-
-
 protocol HandleMapSearch {
     func dropPinZoomIn(placemark:MKPlacemark)
 }
@@ -37,15 +35,6 @@ class MapViewController: UIViewController {
         checkLocationStatus()
         prepareSearchBar()
         prepareEventHandler()
-
-        
-//        geocoder.geocodeAddressString("1 Infinite Loop, CA, USA") { (placemarks: [CLPlacemark]?, error: Error?) in
-//            print(placemarks?.first?.location)
-//        }
-//        
-//        let pin = EventAnnotation(title: "hey", subtitle: "subtitle here", coordinate: CLLocationCoordinate2D(latitude: 37.787359, longitude: -122.408227))
-//        mapView.addAnnotation(pin)
-        
     }
     
     // MARK: - Preparations
@@ -64,7 +53,7 @@ class MapViewController: UIViewController {
         locationManager.requestWhenInUseAuthorization()
         locationManager.startUpdatingLocation()
         mapView.showsUserLocation = true
-
+        
     }
     
     func prepareSearchBar() {
@@ -172,7 +161,7 @@ extension MapViewController: CLLocationManagerDelegate {
     }
     
     func locationManager(_ manager: CLLocationManager, didUpdateLocations locations: [CLLocation]) {
-//        print(locations)
+        //        print(locations)
         
         let location = locations.last
         
@@ -185,9 +174,9 @@ extension MapViewController: CLLocationManagerDelegate {
         mapView.setRegion(region, animated: true)
         
         setupCircleOverlay(userLocation: center)
-
-//        UserConstants.currentUser.location = center
-//        UserConstants.currentUser.time = Int(TimeHelper.getTimeStamp())
+        
+        //        UserConstants.currentUser.location = center
+        //        UserConstants.currentUser.time = Int(TimeHelper.getTimeStamp())
         
         locationManager.stopUpdatingLocation()
     }
@@ -212,25 +201,41 @@ extension MapViewController: HandleMapSearch {
         // cache the pin
         selectedPin = placemark
         // clear existing pins
-        mapView.removeAnnotations(mapView.annotations)
+        //        mapView.removeAnnotations(mapView.annotations)
         let title = placemark.name
         var subtitle: String?
-        if let city = placemark.locality,
-            let state = placemark.administrativeArea {
-            subtitle = "\(city) \(state)"
+        
+        let alertController = UIAlertController(title: "What Did We Do Here?", message: "", preferredStyle: .alert)
+        
+        let saveAction = UIAlertAction(title: "Save", style: .default, handler: { alert -> Void in
+            
+            subtitle = alertController.textFields?.first?.text
+            
+            let coordinate = placemark.coordinate
+            print("\(coordinate.latitude) \(coordinate.longitude)")
+            
+            let annotation = EventAnnotation(title: title!, subtitle: subtitle ?? "", coordinate: coordinate)
+            
+            self.mapView.addAnnotation(annotation)
+            print(AuthHelper.Instance.isLoggedIn())
+            EventHandler.Instance.uploadEvent(title: title!, subtitle: subtitle!, coordinate: coordinate)
+            
+            let region = MKCoordinateRegionMake(placemark.coordinate, MKCoordinateSpan(latitudeDelta: 0.01, longitudeDelta: 0.01))
+            self.mapView.setRegion(region, animated: true)
+        })
+        
+        let cancelAction = UIAlertAction(title: "Cancel",
+                                         style: UIAlertActionStyle.cancel,
+                                         handler: nil)
+        
+        alertController.addTextField { (textField : UITextField!) -> Void in
+            textField.placeholder = "Insert Activity Here"
         }
-        let coordinate = placemark.coordinate
-        print("\(coordinate.latitude) \(coordinate.longitude)")
         
-        let annotation = EventAnnotation(title: title!, subtitle: subtitle!, coordinate: coordinate)
+        alertController.addAction(saveAction)
+        alertController.addAction(cancelAction)
         
-        mapView.addAnnotation(annotation)
-        print(AuthHelper.Instance.isLoggedIn())
-        EventHandler.Instance.uploadEvent(title: title!, subtitle: subtitle!, coordinate: coordinate)
-        
-        let span = MKCoordinateSpanMake(0.05, 0.05)
-        let region = MKCoordinateRegionMake(placemark.coordinate, span)
-        mapView.setRegion(region, animated: true)
+        self.present(alertController, animated: true, completion: nil)
     }
 }
 

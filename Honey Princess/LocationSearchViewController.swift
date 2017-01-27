@@ -50,6 +50,8 @@ class LocationSearchViewController: UIViewController {
         )
         return addressLine
     }
+    
+
 }
 
 extension LocationSearchViewController: UITableViewDelegate {
@@ -64,6 +66,7 @@ extension LocationSearchViewController: UITableViewDataSource {
     func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
         let cell = tableView.dequeueReusableCell(withIdentifier: "cell", for: indexPath)
         let selectedItem = matchingItems[indexPath.row].placemark
+        
         cell.textLabel?.text = selectedItem.name
         cell.detailTextLabel?.text = parseAddress(selectedItem: selectedItem)
         return cell
