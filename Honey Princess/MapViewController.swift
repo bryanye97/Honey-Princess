@@ -36,6 +36,8 @@ class MapViewController: UIViewController {
         prepareLocationManager()
         checkLocationStatus()
         prepareSearchBar()
+        prepareEventHandler()
+
         
 //        geocoder.geocodeAddressString("1 Infinite Loop, CA, USA") { (placemarks: [CLPlacemark]?, error: Error?) in
 //            print(placemarks?.first?.location)
@@ -49,6 +51,11 @@ class MapViewController: UIViewController {
     // MARK: - Preparations
     func prepareMapView() {
         mapView.delegate = self
+    }
+    
+    func prepareEventHandler() {
+        EventHandler.Instance.delegate = self
+        EventHandler.Instance.observeEvents()
     }
     
     func prepareLocationManager() {
@@ -218,11 +225,20 @@ extension MapViewController: HandleMapSearch {
         let annotation = EventAnnotation(title: title!, subtitle: subtitle!, coordinate: coordinate)
         
         mapView.addAnnotation(annotation)
+        print(AuthHelper.Instance.isLoggedIn())
         EventHandler.Instance.uploadEvent(title: title!, subtitle: subtitle!, coordinate: coordinate)
         
         let span = MKCoordinateSpanMake(0.05, 0.05)
         let region = MKCoordinateRegionMake(placemark.coordinate, span)
         mapView.setRegion(region, animated: true)
+    }
+}
+
+extension MapViewController: EventHandlerDelegate {
+    func eventAdded(title: String, subtitle: String, latitude: CLLocationDegrees, longitude: CLLocationDegrees) {
+        let coordinate = CLLocationCoordinate2D(latitude: latitude, longitude: longitude)
+        let event = EventAnnotation(title: title, subtitle: subtitle, coordinate: coordinate)
+        mapView.addAnnotation(event)
     }
 }
 

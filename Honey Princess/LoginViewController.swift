@@ -78,6 +78,7 @@ extension LoginViewController: FBSDKLoginButtonDelegate {
             print(error)
             return
         }
+        AuthHelper.Instance.logInWithFacebook()
         dismiss(animated: true, completion: nil)
     }
 }

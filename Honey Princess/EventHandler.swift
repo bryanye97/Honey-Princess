@@ -10,8 +10,14 @@ import Foundation
 import FirebaseDatabase
 import MapKit
 
+protocol EventHandlerDelegate: class {
+    func eventAdded(title: String, subtitle: String, latitude: CLLocationDegrees, longitude: CLLocationDegrees)
+}
+
 class EventHandler {
     private static let _instance = EventHandler()
+    
+    weak var delegate: EventHandlerDelegate?
     
     private init() {
         
@@ -25,6 +31,22 @@ class EventHandler {
         let data: [String: Any] = ["title": title, "subtitle": subtitle, "latitude": coordinate.latitude, "longitude": coordinate.longitude]
         
         DatabaseHelper.Instance.eventsRef.childByAutoId().setValue(data)
+    }
+    
+    func observeEvents() {
+        DatabaseHelper.Instance.eventsRef.observe(FIRDataEventType.childAdded) { (snapshot: FIRDataSnapshot) in
+            if let data = snapshot.value as? NSDictionary {
+                if let title = data["title"] as? String {
+                    if let subtitle = data["subtitle"] as? String {
+                        if let latitude = data["latitude"] as? CLLocationDegrees {
+                            if let longitude = data["longitude"] as? CLLocationDegrees {
+                                self.delegate?.eventAdded(title: title, subtitle: subtitle, latitude: latitude, longitude: longitude)
+                            }
+                        }
+                    }
+                }
+            }
+        }
     }
 }
 
