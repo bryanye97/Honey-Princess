@@ -22,6 +22,7 @@
 		A25073101E397C70008DD866 /* LoginViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = A250730F1E397C70008DD866 /* LoginViewController.swift */; };
 		A25073131E39978D008DD866 /* AuthHelper.swift in Sources */ = {isa = PBXBuildFile; fileRef = A25073121E39978D008DD866 /* AuthHelper.swift */; };
 		A25073151E3AD61E008DD866 /* EventAnnotation.swift in Sources */ = {isa = PBXBuildFile; fileRef = A25073141E3AD61E008DD866 /* EventAnnotation.swift */; };
+		A25073171E3AF885008DD866 /* ProfileViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = A25073161E3AF885008DD866 /* ProfileViewController.swift */; };
 		A2B90B9B1E274B73001F0817 /* GoogleService-Info.plist in Resources */ = {isa = PBXBuildFile; fileRef = A2B90B9A1E274B73001F0817 /* GoogleService-Info.plist */; };
 /* End PBXBuildFile section */
 
@@ -46,6 +47,7 @@
 		A25073111E3985B4008DD866 /* Honey Princess.entitlements */ = {isa = PBXFileReference; lastKnownFileType = text.plist.entitlements; path = "Honey Princess.entitlements"; sourceTree = "<group>"; };
 		A25073121E39978D008DD866 /* AuthHelper.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = AuthHelper.swift; sourceTree = "<group>"; };
 		A25073141E3AD61E008DD866 /* EventAnnotation.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = EventAnnotation.swift; path = "Honey Princess/EventAnnotation.swift"; sourceTree = "<group>"; };
+		A25073161E3AF885008DD866 /* ProfileViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ProfileViewController.swift; sourceTree = "<group>"; };
 		A2B90B9A1E274B73001F0817 /* GoogleService-Info.plist */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.plist.xml; path = "GoogleService-Info.plist"; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
@@ -114,6 +116,7 @@
 				A250730F1E397C70008DD866 /* LoginViewController.swift */,
 				A25072FD1E3832FE008DD866 /* MapViewController.swift */,
 				A250730B1E38752B008DD866 /* LocationSearchViewController.swift */,
+				A25073161E3AF885008DD866 /* ProfileViewController.swift */,
 			);
 			name = Controllers;
 			sourceTree = "<group>";
@@ -282,6 +285,7 @@
 			files = (
 				A225124B1E0CEBEE00231427 /* AppDelegate.swift in Sources */,
 				A250730E1E3883C1008DD866 /* EventHandler.swift in Sources */,
+				A25073171E3AF885008DD866 /* ProfileViewController.swift in Sources */,
 				A25073151E3AD61E008DD866 /* EventAnnotation.swift in Sources */,
 				A250730C1E38752B008DD866 /* LocationSearchViewController.swift in Sources */,
 				A250730A1E386FD7008DD866 /* DatabaseHelper.swift in Sources */,

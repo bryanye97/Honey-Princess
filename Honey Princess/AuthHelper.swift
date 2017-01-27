@@ -8,6 +8,7 @@
 
 import Foundation
 import FirebaseAuth
+import FirebaseDatabase
 import FBSDKLoginKit
 
 class AuthHelper {
@@ -19,6 +20,7 @@ class AuthHelper {
     }
     
     func logInWithFacebook() {
+        
         let accessToken = FBSDKAccessToken.current()
         guard let accessTokenString = accessToken?.tokenString else { return }
         let credentials = FIRFacebookAuthProvider.credential(withAccessToken: accessTokenString)
@@ -28,9 +30,21 @@ class AuthHelper {
                 print("Something went wrong with our FB user: \(error)")
                 return
             }
-            print("Successfully logged in with our user \(user)")
+            
+            guard let uid = user?.uid else { return }
+            
+            let graphRequest: FBSDKGraphRequest = FBSDKGraphRequest(graphPath: "/me", parameters: ["fields": "id, name, email"])
+            
+            graphRequest.start(completionHandler: { (connection, result, error) in
+                let data: [String:AnyObject] = result as! [String : AnyObject]
+                
+                DatabaseHelper.Instance.saveUser(uid: uid, data: data)
+
+            })
         })
     }
+    
+
     
     func isLoggedIn() -> Bool {
         if FIRAuth.auth()?.currentUser != nil {

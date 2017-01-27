@@ -22,12 +22,6 @@ class LoginViewController: UIViewController {
     //MARK: - Preparations
     func setupFacebookLoginButton() {
         
-        let fbLoginButton = FBSDKLoginButton()
-        view.addSubview(fbLoginButton)
-        fbLoginButton.frame = CGRect(x: 16, y: 50, width: view.frame.width - 32, height: 50)
-        fbLoginButton.delegate = self
-        fbLoginButton.readPermissions = ["email", "public_profile"]
-        
         let customFBButton = UIButton()
         customFBButton.backgroundColor = .orange
         customFBButton.frame = CGRect(x: 16, y: 116, width: view.frame.width - 32, height: 50)
@@ -47,25 +41,10 @@ class LoginViewController: UIViewController {
                 return
             }
             
-            self.showEmailAddress()
+            AuthHelper.Instance.logInWithFacebook()
+            self.dismiss(animated: true, completion: nil)
         }
     }
-    
-    //MARK: - Show Email Address
-    func showEmailAddress() {
-        AuthHelper.Instance.logInWithFacebook()
-        
-        FBSDKGraphRequest(graphPath: "/me", parameters: ["fields": "id, name, email"]).start { (connection, result, error) in
-            if error != nil {
-                print("Failed to start graph request: \(error)")
-                return
-            }
-            
-            print(result ?? "")
-        }
-        
-    }
-    
 }
 
 extension LoginViewController: FBSDKLoginButtonDelegate {
@@ -78,7 +57,5 @@ extension LoginViewController: FBSDKLoginButtonDelegate {
             print(error)
             return
         }
-        AuthHelper.Instance.logInWithFacebook()
-        dismiss(animated: true, completion: nil)
     }
 }
