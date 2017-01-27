@@ -17,7 +17,7 @@ class ProfileViewController: UIViewController {
     override func viewDidLoad() {
         super.viewDidLoad()
         lol()
-        // Do any additional setup after loading the view.
+        
     }
 
     override func didReceiveMemoryWarning() {
@@ -29,7 +29,6 @@ class ProfileViewController: UIViewController {
         if let user = FIRAuth.auth()?.currentUser {
             self.profileImageView.layer.cornerRadius = self.profileImageView.frame.size.width/2
             self.profileImageView.clipsToBounds = true
-            
             
             let name = user.displayName
 //            let email = user.email

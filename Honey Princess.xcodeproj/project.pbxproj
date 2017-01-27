@@ -24,6 +24,8 @@
 		A25073151E3AD61E008DD866 /* EventAnnotation.swift in Sources */ = {isa = PBXBuildFile; fileRef = A25073141E3AD61E008DD866 /* EventAnnotation.swift */; };
 		A25073171E3AF885008DD866 /* ProfileViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = A25073161E3AF885008DD866 /* ProfileViewController.swift */; };
 		A2B90B9B1E274B73001F0817 /* GoogleService-Info.plist in Resources */ = {isa = PBXBuildFile; fileRef = A2B90B9A1E274B73001F0817 /* GoogleService-Info.plist */; };
+		A2D748A71E3B195E0071AD90 /* User.swift in Sources */ = {isa = PBXBuildFile; fileRef = A2D748A61E3B195E0071AD90 /* User.swift */; };
+		A2D748A91E3B1D370071AD90 /* UsersViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = A2D748A81E3B1D370071AD90 /* UsersViewController.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -49,6 +51,8 @@
 		A25073141E3AD61E008DD866 /* EventAnnotation.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = EventAnnotation.swift; path = "Honey Princess/EventAnnotation.swift"; sourceTree = "<group>"; };
 		A25073161E3AF885008DD866 /* ProfileViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ProfileViewController.swift; sourceTree = "<group>"; };
 		A2B90B9A1E274B73001F0817 /* GoogleService-Info.plist */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.plist.xml; path = "GoogleService-Info.plist"; sourceTree = "<group>"; };
+		A2D748A61E3B195E0071AD90 /* User.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = User.swift; sourceTree = "<group>"; };
+		A2D748A81E3B1D370071AD90 /* UsersViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = UsersViewController.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -99,6 +103,7 @@
 				A225124A1E0CEBEE00231427 /* AppDelegate.swift */,
 				A25072FF1E38330D008DD866 /* Controllers */,
 				A25073011E383A22008DD866 /* Views */,
+				A2D748A51E3B194B0071AD90 /* Models */,
 				A25073001E3837E9008DD866 /* Helpers */,
 				A22512511E0CEBEE00231427 /* Assets.xcassets */,
 				A225124E1E0CEBEE00231427 /* Main.storyboard */,
@@ -117,6 +122,7 @@
 				A25072FD1E3832FE008DD866 /* MapViewController.swift */,
 				A250730B1E38752B008DD866 /* LocationSearchViewController.swift */,
 				A25073161E3AF885008DD866 /* ProfileViewController.swift */,
+				A2D748A81E3B1D370071AD90 /* UsersViewController.swift */,
 			);
 			name = Controllers;
 			sourceTree = "<group>";
@@ -138,6 +144,14 @@
 			);
 			name = Views;
 			path = ..;
+			sourceTree = "<group>";
+		};
+		A2D748A51E3B194B0071AD90 /* Models */ = {
+			isa = PBXGroup;
+			children = (
+				A2D748A61E3B195E0071AD90 /* User.swift */,
+			);
+			name = Models;
 			sourceTree = "<group>";
 		};
 		E2F5F2016824608221A360AB /* Frameworks */ = {
@@ -284,6 +298,7 @@
 			buildActionMask = 2147483647;
 			files = (
 				A225124B1E0CEBEE00231427 /* AppDelegate.swift in Sources */,
+				A2D748A91E3B1D370071AD90 /* UsersViewController.swift in Sources */,
 				A250730E1E3883C1008DD866 /* EventHandler.swift in Sources */,
 				A25073171E3AF885008DD866 /* ProfileViewController.swift in Sources */,
 				A25073151E3AD61E008DD866 /* EventAnnotation.swift in Sources */,
@@ -293,6 +308,7 @@
 				A25072FE1E3832FE008DD866 /* MapViewController.swift in Sources */,
 				A25073081E383B77008DD866 /* HoneyProcess.xcdatamodeld in Sources */,
 				A25073131E39978D008DD866 /* AuthHelper.swift in Sources */,
+				A2D748A71E3B195E0071AD90 /* User.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};

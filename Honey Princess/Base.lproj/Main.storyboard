@@ -51,6 +51,50 @@
             </objects>
             <point key="canvasLocation" x="2954.4000000000001" y="138.98050974512745"/>
         </scene>
+        <!--Users-->
+        <scene sceneID="58I-7j-nX3">
+            <objects>
+                <viewController id="SUi-DP-57f" customClass="UsersViewController" customModule="Honey_Princess" customModuleProvider="target" sceneMemberID="viewController">
+                    <layoutGuides>
+                        <viewControllerLayoutGuide type="top" id="zhI-kg-ZU5"/>
+                        <viewControllerLayoutGuide type="bottom" id="C9n-e3-Jcq"/>
+                    </layoutGuides>
+                    <view key="view" contentMode="scaleToFill" id="fTJ-7D-g6x">
+                        <rect key="frame" x="0.0" y="0.0" width="375" height="667"/>
+                        <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <subviews>
+                            <tableView clipsSubviews="YES" contentMode="scaleToFill" alwaysBounceVertical="YES" dataMode="prototypes" style="plain" separatorStyle="default" rowHeight="44" sectionHeaderHeight="28" sectionFooterHeight="28" translatesAutoresizingMaskIntoConstraints="NO" id="Wt4-la-9oj">
+                                <rect key="frame" x="0.0" y="0.0" width="375" height="618"/>
+                                <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                                <prototypes>
+                                    <tableViewCell clipsSubviews="YES" contentMode="scaleToFill" selectionStyle="blue" hidesAccessoryWhenEditing="NO" indentationLevel="1" indentationWidth="0.0" reuseIdentifier="cell" id="ygK-dl-jzl">
+                                        <rect key="frame" x="0.0" y="28" width="375" height="44"/>
+                                        <autoresizingMask key="autoresizingMask"/>
+                                        <tableViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" tableViewCell="ygK-dl-jzl" id="N5G-Ic-Y0j">
+                                            <rect key="frame" x="0.0" y="0.0" width="375" height="43"/>
+                                            <autoresizingMask key="autoresizingMask"/>
+                                        </tableViewCellContentView>
+                                    </tableViewCell>
+                                </prototypes>
+                            </tableView>
+                        </subviews>
+                        <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                        <constraints>
+                            <constraint firstItem="Wt4-la-9oj" firstAttribute="leading" secondItem="fTJ-7D-g6x" secondAttribute="leading" id="7lX-ee-xJT"/>
+                            <constraint firstItem="C9n-e3-Jcq" firstAttribute="top" secondItem="Wt4-la-9oj" secondAttribute="bottom" id="WX2-A5-LX7"/>
+                            <constraint firstItem="Wt4-la-9oj" firstAttribute="top" secondItem="fTJ-7D-g6x" secondAttribute="top" id="r7I-JK-HGJ"/>
+                            <constraint firstAttribute="trailing" secondItem="Wt4-la-9oj" secondAttribute="trailing" id="us7-Lx-QA7"/>
+                        </constraints>
+                    </view>
+                    <tabBarItem key="tabBarItem" title="Users" id="N8P-BA-ew6"/>
+                    <connections>
+                        <outlet property="tableView" destination="Wt4-la-9oj" id="Ypn-eU-vJm"/>
+                    </connections>
+                </viewController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="EkX-nr-wS5" userLabel="First Responder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="964" y="961.16941529235385"/>
+        </scene>
         <!--Profile-->
         <scene sceneID="6Kn-BC-fkB">
             <objects>
@@ -96,7 +140,7 @@
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="ds5-py-BUD" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="2013.5999999999999" y="854.1229385307347"/>
+            <point key="canvasLocation" x="2063" y="854"/>
         </scene>
         <!--Location Search View Controller-->
         <scene sceneID="eaG-kd-g95">
@@ -118,18 +162,18 @@
                                         <rect key="frame" x="0.0" y="28" width="375" height="44"/>
                                         <autoresizingMask key="autoresizingMask"/>
                                         <tableViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" tableViewCell="Rs4-ml-hOw" id="Jav-bo-8Pa">
-                                            <rect key="frame" x="0.0" y="0.0" width="375" height="43"/>
+                                            <rect key="frame" x="0.0" y="0.0" width="375" height="43.5"/>
                                             <autoresizingMask key="autoresizingMask"/>
                                             <subviews>
                                                 <label opaque="NO" multipleTouchEnabled="YES" contentMode="left" text="Title" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" id="zd6-KA-uNn">
-                                                    <rect key="frame" x="15" y="4" width="34" height="21"/>
+                                                    <rect key="frame" x="15" y="5" width="33.5" height="20.5"/>
                                                     <autoresizingMask key="autoresizingMask"/>
                                                     <fontDescription key="fontDescription" type="system" pointSize="17"/>
                                                     <nil key="textColor"/>
                                                     <nil key="highlightedColor"/>
                                                 </label>
                                                 <label opaque="NO" multipleTouchEnabled="YES" contentMode="left" text="Subtitle" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" id="eda-7F-w69">
-                                                    <rect key="frame" x="15" y="25" width="44" height="15"/>
+                                                    <rect key="frame" x="15" y="25.5" width="44" height="14.5"/>
                                                     <autoresizingMask key="autoresizingMask"/>
                                                     <fontDescription key="fontDescription" type="system" pointSize="12"/>
                                                     <nil key="textColor"/>
@@ -182,12 +226,14 @@
                     <toolbarItems/>
                     <navigationItem key="navigationItem" id="MrN-74-DtP"/>
                     <tabBar key="tabBar" contentMode="scaleToFill" id="xS5-tu-Tpi">
+                        <rect key="frame" x="0.0" y="0.0" width="1000" height="1000"/>
                         <autoresizingMask key="autoresizingMask"/>
                         <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="calibratedWhite"/>
                     </tabBar>
                     <connections>
                         <segue destination="jnC-wt-aCa" kind="relationship" relationship="viewControllers" id="lpL-dU-fEX"/>
                         <segue destination="wh3-5m-QTC" kind="relationship" relationship="viewControllers" id="dw9-RM-DJU"/>
+                        <segue destination="SUi-DP-57f" kind="relationship" relationship="viewControllers" id="bRw-7j-riT"/>
                     </connections>
                 </tabBarController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="bVV-eW-qV3" userLabel="First Responder" sceneMemberID="firstResponder"/>
