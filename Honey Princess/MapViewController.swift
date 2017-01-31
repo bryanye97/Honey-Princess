@@ -35,22 +35,9 @@ class MapViewController: UIViewController {
         checkLocationStatus()
         prepareSearchBar()
         prepareEventHandler()
-        print(doesOpenSansExist())
     }
     
-    func doesOpenSansExist() -> Bool {
-        print(UIFont.fontNames(forFamilyName: "Open Sans"))
-        
-        let fontFamilies = UIFont.familyNames
-        if fontFamilies.contains("Open Sans") {
-            let fontNames = UIFont.fontNames(forFamilyName: "Open Sans")
-            if fontNames.contains("OpenSans") {
-                return true
-            }
-        }
-        
-        return false
-    }
+
     
     // MARK: - Preparations
     func prepareMapView() {
@@ -59,6 +46,7 @@ class MapViewController: UIViewController {
     
     func prepareEventHandler() {
         EventHandler.Instance.delegate = self
+        EventHandler.Instance.observeEventsForCurrentUser()
 //        EventHandler.Instance.observeEvents()
     }
     

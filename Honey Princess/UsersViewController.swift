@@ -56,6 +56,7 @@ extension UsersViewController: UITableViewDataSource {
         let user = users[indexPath.row]
         let cell = tableView.dequeueReusableCell(withIdentifier: "cell")
         cell?.textLabel?.text = user.email
+        
         return cell!
     }
     

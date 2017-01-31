@@ -13,12 +13,16 @@ import FBSDKLoginKit
 
 class AuthHelper {
     
+    
+    //MARK: - Properties
     private static let _instance = AuthHelper()
     
     static var Instance: AuthHelper {
         return _instance
     }
     
+    
+    //MARK - Facebook Functions
     func logInWithFacebook() {
         
         let accessToken = FBSDKAccessToken.current()
@@ -44,6 +48,12 @@ class AuthHelper {
         })
     }
     
+    func logOutOfFacebook() {
+        FBSDKAccessToken.setCurrent(nil)
+    }
+    
+    
+    //MARK - Firebase User Functions
     func idForCurrentUser() -> String {
         if isLoggedIn() {
            return (FIRAuth.auth()?.currentUser?.uid)!
@@ -73,9 +83,7 @@ class AuthHelper {
         return true
     }
     
-    func logOutOfFacebook() {
-        FBSDKAccessToken.setCurrent(nil)
-    }
+
     
 
 }

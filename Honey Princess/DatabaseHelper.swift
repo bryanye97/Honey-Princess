@@ -15,6 +15,8 @@ protocol FetchData: class {
 
 class DatabaseHelper {
     
+    
+    // MARK: - Properties
     private static let _instance = DatabaseHelper()
     
     private init () { }
@@ -41,22 +43,8 @@ class DatabaseHelper {
         return databaseRef.child("couples")
     }
     
-    func saveCouple (user1id: String, user2id: String) {
-        let data: [String: Any] = [user1id: true, user2id: true]
-        
-        let newCoupleRef = couplesRef.childByAutoId()
-        newCoupleRef.setValue(data) { (error, ref) in
-            let userData: [String: Any] = ["couple": newCoupleRef.key]
-            
-            
-            let user1Reference = DatabaseHelper.Instance.usersRef.child(user1id)
-            let user2Reference = DatabaseHelper.Instance.usersRef.child(user2id)
-    
-            user1Reference.updateChildValues(userData)
-            user2Reference.updateChildValues(userData)
-        }
-    }
-    
+
+    //MARK: - User Functions
     func saveUser(uid: String, data: [String: AnyObject]) {
         let userReference = DatabaseHelper.Instance.usersRef.child(uid)
         
@@ -94,6 +82,23 @@ class DatabaseHelper {
                 }
             }
             self.delegate?.dataReceived(users: users)
+        }
+    }
+    
+    //MARK: - Couple Functions
+    func saveCouple (user1id: String, user2id: String) {
+        let data: [String: Any] = [user1id: true, user2id: true]
+        
+        let newCoupleRef = couplesRef.childByAutoId()
+        newCoupleRef.setValue(data) { (error, ref) in
+            let userData: [String: Any] = ["couple": newCoupleRef.key]
+            
+            
+            let user1Reference = DatabaseHelper.Instance.usersRef.child(user1id)
+            let user2Reference = DatabaseHelper.Instance.usersRef.child(user2id)
+            
+            user1Reference.updateChildValues(userData)
+            user2Reference.updateChildValues(userData)
         }
     }
     
