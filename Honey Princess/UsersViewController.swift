@@ -32,10 +32,6 @@ class UsersViewController: UIViewController {
         DatabaseHelper.Instance.delegate = self
         DatabaseHelper.Instance.getUsers()
     }
-    
-    
-    
-    
 }
 
 extension UsersViewController: FetchData {
@@ -47,14 +43,19 @@ extension UsersViewController: FetchData {
 }
 
 extension UsersViewController: UITableViewDelegate {
-    
+    func tableView(_ tableView: UITableView, didSelectRowAt indexPath: IndexPath) {
+        let selfId = AuthHelper.Instance.idForCurrentUser()
+        let partner = users[indexPath.row]
+        let partnerId = partner.firebaseId
+        DatabaseHelper.Instance.saveCouple(user1id: selfId, user2id: partnerId)
+    }
 }
 
 extension UsersViewController: UITableViewDataSource {
     func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
         let user = users[indexPath.row]
         let cell = tableView.dequeueReusableCell(withIdentifier: "cell")
-        cell?.textLabel?.text = user.name
+        cell?.textLabel?.text = user.email
         return cell!
     }
     

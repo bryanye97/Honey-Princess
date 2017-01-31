@@ -37,6 +37,24 @@ class DatabaseHelper {
         return databaseRef.child("events")
     }
     
+    var couplesRef: FIRDatabaseReference {
+        return databaseRef.child("couples")
+    }
+    
+    func saveCouple (user1id: String, user2id: String) {
+        let data: [String: Any] = [user1id: true, user2id: true]
+        
+        let newCoupleRef = couplesRef.childByAutoId()
+        newCoupleRef.setValue(data) { (error, ref) in
+            let user1Reference = DatabaseHelper.Instance.usersRef.child(user1id).child("couples")
+            let user2Reference = DatabaseHelper.Instance.usersRef.child(user2id).child("couples")
+            
+            let userData: [String: Any] = [newCoupleRef.key: true]
+            user1Reference.updateChildValues(userData)
+            user2Reference.updateChildValues(userData)
+        }
+    }
+    
     func saveUser(uid: String, data: [String: AnyObject]) {
         let userReference = DatabaseHelper.Instance.usersRef.child(uid)
         
@@ -53,7 +71,7 @@ class DatabaseHelper {
     func getUsers() {
         usersRef.observeSingleEvent(of: FIRDataEventType.value) { (snapshot: FIRDataSnapshot) in
             var users = [User]()
-            print(snapshot.value)
+            
             if let usersInDatabase = snapshot.value as? NSDictionary {
                 
                 for (key, value) in usersInDatabase {
@@ -75,5 +93,9 @@ class DatabaseHelper {
             }
             self.delegate?.dataReceived(users: users)
         }
+    }
+    
+    func getCoupleForCurrentUser() {
+        
     }
 }

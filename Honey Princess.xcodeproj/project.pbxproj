@@ -23,6 +23,10 @@
 		A25073131E39978D008DD866 /* AuthHelper.swift in Sources */ = {isa = PBXBuildFile; fileRef = A25073121E39978D008DD866 /* AuthHelper.swift */; };
 		A25073151E3AD61E008DD866 /* EventAnnotation.swift in Sources */ = {isa = PBXBuildFile; fileRef = A25073141E3AD61E008DD866 /* EventAnnotation.swift */; };
 		A25073171E3AF885008DD866 /* ProfileViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = A25073161E3AF885008DD866 /* ProfileViewController.swift */; };
+		A295CAFD1E400E620007AF85 /* UserTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = A295CAFB1E400E620007AF85 /* UserTableViewCell.swift */; };
+		A295CAFE1E400E620007AF85 /* UserTableViewCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = A295CAFC1E400E620007AF85 /* UserTableViewCell.xib */; };
+		A295CB001E400EAC0007AF85 /* UIColorExtension.swift in Sources */ = {isa = PBXBuildFile; fileRef = A295CAFF1E400EAC0007AF85 /* UIColorExtension.swift */; };
+		A295CB021E400FEB0007AF85 /* CouplesViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = A295CB011E400FEB0007AF85 /* CouplesViewController.swift */; };
 		A2B90B9B1E274B73001F0817 /* GoogleService-Info.plist in Resources */ = {isa = PBXBuildFile; fileRef = A2B90B9A1E274B73001F0817 /* GoogleService-Info.plist */; };
 		A2D748A71E3B195E0071AD90 /* User.swift in Sources */ = {isa = PBXBuildFile; fileRef = A2D748A61E3B195E0071AD90 /* User.swift */; };
 		A2D748A91E3B1D370071AD90 /* UsersViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = A2D748A81E3B1D370071AD90 /* UsersViewController.swift */; };
@@ -50,6 +54,10 @@
 		A25073121E39978D008DD866 /* AuthHelper.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = AuthHelper.swift; sourceTree = "<group>"; };
 		A25073141E3AD61E008DD866 /* EventAnnotation.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = EventAnnotation.swift; path = "Honey Princess/EventAnnotation.swift"; sourceTree = "<group>"; };
 		A25073161E3AF885008DD866 /* ProfileViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ProfileViewController.swift; sourceTree = "<group>"; };
+		A295CAFB1E400E620007AF85 /* UserTableViewCell.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = UserTableViewCell.swift; sourceTree = "<group>"; };
+		A295CAFC1E400E620007AF85 /* UserTableViewCell.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = UserTableViewCell.xib; sourceTree = "<group>"; };
+		A295CAFF1E400EAC0007AF85 /* UIColorExtension.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = UIColorExtension.swift; sourceTree = "<group>"; };
+		A295CB011E400FEB0007AF85 /* CouplesViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = CouplesViewController.swift; sourceTree = "<group>"; };
 		A2B90B9A1E274B73001F0817 /* GoogleService-Info.plist */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.plist.xml; path = "GoogleService-Info.plist"; sourceTree = "<group>"; };
 		A2D748A61E3B195E0071AD90 /* User.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = User.swift; sourceTree = "<group>"; };
 		A2D748A81E3B1D370071AD90 /* UsersViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = UsersViewController.swift; sourceTree = "<group>"; };
@@ -123,6 +131,7 @@
 				A250730B1E38752B008DD866 /* LocationSearchViewController.swift */,
 				A25073161E3AF885008DD866 /* ProfileViewController.swift */,
 				A2D748A81E3B1D370071AD90 /* UsersViewController.swift */,
+				A295CB011E400FEB0007AF85 /* CouplesViewController.swift */,
 			);
 			name = Controllers;
 			sourceTree = "<group>";
@@ -131,8 +140,9 @@
 			isa = PBXGroup;
 			children = (
 				A25073091E386FD7008DD866 /* DatabaseHelper.swift */,
-				A250730D1E3883C1008DD866 /* EventHandler.swift */,
 				A25073121E39978D008DD866 /* AuthHelper.swift */,
+				A250730D1E3883C1008DD866 /* EventHandler.swift */,
+				A295CAFF1E400EAC0007AF85 /* UIColorExtension.swift */,
 			);
 			name = Helpers;
 			sourceTree = "<group>";
@@ -141,6 +151,8 @@
 			isa = PBXGroup;
 			children = (
 				A25073141E3AD61E008DD866 /* EventAnnotation.swift */,
+				A295CAFB1E400E620007AF85 /* UserTableViewCell.swift */,
+				A295CAFC1E400E620007AF85 /* UserTableViewCell.xib */,
 			);
 			name = Views;
 			path = ..;
@@ -239,6 +251,7 @@
 				A22512521E0CEBEE00231427 /* Assets.xcassets in Resources */,
 				A2B90B9B1E274B73001F0817 /* GoogleService-Info.plist in Resources */,
 				A22512501E0CEBEE00231427 /* Main.storyboard in Resources */,
+				A295CAFE1E400E620007AF85 /* UserTableViewCell.xib in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -298,9 +311,12 @@
 			buildActionMask = 2147483647;
 			files = (
 				A225124B1E0CEBEE00231427 /* AppDelegate.swift in Sources */,
+				A295CB001E400EAC0007AF85 /* UIColorExtension.swift in Sources */,
 				A2D748A91E3B1D370071AD90 /* UsersViewController.swift in Sources */,
 				A250730E1E3883C1008DD866 /* EventHandler.swift in Sources */,
+				A295CB021E400FEB0007AF85 /* CouplesViewController.swift in Sources */,
 				A25073171E3AF885008DD866 /* ProfileViewController.swift in Sources */,
+				A295CAFD1E400E620007AF85 /* UserTableViewCell.swift in Sources */,
 				A25073151E3AD61E008DD866 /* EventAnnotation.swift in Sources */,
 				A250730C1E38752B008DD866 /* LocationSearchViewController.swift in Sources */,
 				A250730A1E386FD7008DD866 /* DatabaseHelper.swift in Sources */,

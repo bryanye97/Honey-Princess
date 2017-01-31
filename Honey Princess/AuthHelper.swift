@@ -44,6 +44,13 @@ class AuthHelper {
         })
     }
     
+    func idForCurrentUser() -> String {
+        if isLoggedIn() {
+           return (FIRAuth.auth()?.currentUser?.uid)!
+        } else {
+            return ""
+        }
+    }
 
     
     func isLoggedIn() -> Bool {
