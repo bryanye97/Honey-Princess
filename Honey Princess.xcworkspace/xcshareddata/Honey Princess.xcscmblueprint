@@ -1,0 +1,30 @@
+{
+  "DVTSourceControlWorkspaceBlueprintPrimaryRemoteRepositoryKey" : "6BA0845633EE69AB0C82F2B4A70F55F140DC0D36",
+  "DVTSourceControlWorkspaceBlueprintWorkingCopyRepositoryLocationsKey" : {
+
+  },
+  "DVTSourceControlWorkspaceBlueprintWorkingCopyStatesKey" : {
+    "6BA0845633EE69AB0C82F2B4A70F55F140DC0D36" : 9223372036854775807,
+    "9FDAB34F0FFF52345E5C0D11B5D19FC0BBDF2D0A" : 9223372036854775807
+  },
+  "DVTSourceControlWorkspaceBlueprintIdentifierKey" : "CFE240C8-7AD3-4F3B-9D48-2C8680B7953D",
+  "DVTSourceControlWorkspaceBlueprintWorkingCopyPathsKey" : {
+    "6BA0845633EE69AB0C82F2B4A70F55F140DC0D36" : "Honey%20Princess\/",
+    "9FDAB34F0FFF52345E5C0D11B5D19FC0BBDF2D0A" : "MindHack\/"
+  },
+  "DVTSourceControlWorkspaceBlueprintNameKey" : "Honey Princess",
+  "DVTSourceControlWorkspaceBlueprintVersion" : 204,
+  "DVTSourceControlWorkspaceBlueprintRelativePathToProjectKey" : "Honey Princess.xcworkspace",
+  "DVTSourceControlWorkspaceBlueprintRemoteRepositoriesKey" : [
+    {
+      "DVTSourceControlWorkspaceBlueprintRemoteRepositoryURLKey" : "https:\/\/github.com\/bryanye97\/Honey-Princess.git",
+      "DVTSourceControlWorkspaceBlueprintRemoteRepositorySystemKey" : "com.apple.dt.Xcode.sourcecontrol.Git",
+      "DVTSourceControlWorkspaceBlueprintRemoteRepositoryIdentifierKey" : "6BA0845633EE69AB0C82F2B4A70F55F140DC0D36"
+    },
+    {
+      "DVTSourceControlWorkspaceBlueprintRemoteRepositoryURLKey" : "https:\/\/github.com\/bryanye97\/MindHack.git",
+      "DVTSourceControlWorkspaceBlueprintRemoteRepositorySystemKey" : "com.apple.dt.Xcode.sourcecontrol.Git",
+      "DVTSourceControlWorkspaceBlueprintRemoteRepositoryIdentifierKey" : "9FDAB34F0FFF52345E5C0D11B5D19FC0BBDF2D0A"
+    }
+  ]
+}

@@ -46,10 +46,12 @@ class DatabaseHelper {
         
         let newCoupleRef = couplesRef.childByAutoId()
         newCoupleRef.setValue(data) { (error, ref) in
-            let user1Reference = DatabaseHelper.Instance.usersRef.child(user1id).child("couples")
-            let user2Reference = DatabaseHelper.Instance.usersRef.child(user2id).child("couples")
+            let userData: [String: Any] = ["couple": newCoupleRef.key]
             
-            let userData: [String: Any] = [newCoupleRef.key: true]
+            
+            let user1Reference = DatabaseHelper.Instance.usersRef.child(user1id)
+            let user2Reference = DatabaseHelper.Instance.usersRef.child(user2id)
+    
             user1Reference.updateChildValues(userData)
             user2Reference.updateChildValues(userData)
         }
@@ -95,7 +97,15 @@ class DatabaseHelper {
         }
     }
     
-    func getCoupleForCurrentUser() {
+    func getCoupleKeyForCurrentUser(completionHandler: @escaping (_ couplesKey: String)-> Void) {
+        let currentUserId = AuthHelper.Instance.idForCurrentUser()
         
+        usersRef.child(currentUserId).observeSingleEvent(of: FIRDataEventType.value) { (snapshot: FIRDataSnapshot) in
+            if let userData = snapshot.value as? NSDictionary {
+                if let couplesKey = userData["couple"] as? String {
+                    completionHandler(couplesKey)
+                }
+            }
+        }
     }
 }

@@ -293,7 +293,7 @@
                 <navigationController automaticallyAdjustsScrollViewInsets="NO" id="jnC-wt-aCa" sceneMemberID="viewController">
                     <tabBarItem key="tabBarItem" title="Map" id="62p-bo-Rml"/>
                     <toolbarItems/>
-                    <navigationBar key="navigationBar" contentMode="scaleToFill" id="8dy-Uq-YIg">
+                    <navigationBar key="navigationBar" contentMode="scaleToFill" misplaced="YES" id="8dy-Uq-YIg">
                         <rect key="frame" x="0.0" y="0.0" width="375" height="44"/>
                         <autoresizingMask key="autoresizingMask"/>
                     </navigationBar>
@@ -312,7 +312,7 @@
                 <navigationController automaticallyAdjustsScrollViewInsets="NO" id="13Q-Uh-gr0" sceneMemberID="viewController">
                     <tabBarItem key="tabBarItem" title="Couples" id="N8P-BA-ew6"/>
                     <toolbarItems/>
-                    <navigationBar key="navigationBar" contentMode="scaleToFill" id="x9X-Zv-cbj">
+                    <navigationBar key="navigationBar" contentMode="scaleToFill" misplaced="YES" id="x9X-Zv-cbj">
                         <rect key="frame" x="0.0" y="0.0" width="375" height="44"/>
                         <autoresizingMask key="autoresizingMask"/>
                     </navigationBar>

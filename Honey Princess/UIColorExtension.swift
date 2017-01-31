@@ -13,13 +13,19 @@ extension UIColor {
         return UIColor(red:222/255.0, green:225/255.0, blue:227/255.0, alpha: 0.5)
     }
     
-    static func mindHackBlue() -> UIColor {
-        //2C40B0
-        return UIColor(red: 44/255.0, green: 64/255.0, blue: 176/255.0, alpha: 1)
+    static func honeyPrincessGold() -> UIColor {
+        //E6AF4B
+        return UIColor(red: 230/255.0, green: 175/255.0, blue: 75/255.0, alpha: 1)
     }
     
-    static func lighterMindHackBlue() -> UIColor {
-        return UIColor(red: 44/255.0, green: 64/255.0, blue: 176/255.0, alpha: 0.8)
+    static func honeyPrincessOrange() -> UIColor {
+        //E05038
+        return UIColor(red: 224/255.0, green: 80/255.0, blue: 56/255.0, alpha: 0.8)
+    }
+    
+    static func honeyPrincessLightPink() -> UIColor {
+        //F2CBBC
+        return UIColor(red: 242/255.0, green: 203/255.0, blue: 188/255.0, alpha: 0.8)
     }
     
     static func emptyDataBackgroundGray() -> UIColor {
