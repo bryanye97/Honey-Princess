@@ -142,7 +142,7 @@
             </objects>
             <point key="canvasLocation" x="3814" y="851"/>
         </scene>
-        <!--Profile-->
+        <!--Profile View Controller-->
         <scene sceneID="6Kn-BC-fkB">
             <objects>
                 <viewController id="wh3-5m-QTC" customClass="ProfileViewController" customModule="Honey_Princess" customModuleProvider="target" sceneMemberID="viewController">
@@ -155,14 +155,14 @@
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
                             <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" translatesAutoresizingMaskIntoConstraints="NO" id="ffC-eV-jfZ">
-                                <rect key="frame" x="23" y="246.5" width="328" height="174"/>
+                                <rect key="frame" x="23" y="247" width="328" height="174"/>
                                 <constraints>
                                     <constraint firstAttribute="width" constant="328" id="vDs-yy-oKV"/>
                                     <constraint firstAttribute="height" constant="174" id="vML-0h-IXx"/>
                                 </constraints>
                             </imageView>
                             <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Label" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="qDW-1N-2ZG">
-                                <rect key="frame" x="166" y="428.5" width="42" height="21"/>
+                                <rect key="frame" x="166" y="429" width="42" height="21"/>
                                 <constraints>
                                     <constraint firstAttribute="height" constant="21" id="1Kb-eE-nXi"/>
                                 </constraints>
@@ -179,7 +179,9 @@
                             <constraint firstItem="ffC-eV-jfZ" firstAttribute="centerY" secondItem="Jxb-Hr-5wY" secondAttribute="centerY" id="qQh-ov-Z66"/>
                         </constraints>
                     </view>
-                    <tabBarItem key="tabBarItem" title="Profile" id="IQt-V4-MXJ"/>
+                    <tabBarItem key="tabBarItem" title="" image="ProfileTabLogo" id="IQt-V4-MXJ">
+                        <inset key="imageInsets" minX="0.0" minY="5" maxX="0.0" maxY="-5"/>
+                    </tabBarItem>
                     <connections>
                         <outlet property="displayNameLabel" destination="qDW-1N-2ZG" id="tYi-r0-dLF"/>
                         <outlet property="profileImageView" destination="ffC-eV-jfZ" id="1IX-b0-Gsi"/>
@@ -187,7 +189,7 @@
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="ds5-py-BUD" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="2015" y="-552"/>
+            <point key="canvasLocation" x="1994" y="-762"/>
         </scene>
         <!--Location Search View Controller-->
         <scene sceneID="eaG-kd-g95">
@@ -287,11 +289,13 @@
             </objects>
             <point key="canvasLocation" x="1076" y="138.98050974512745"/>
         </scene>
-        <!--Map-->
+        <!--Navigation Controller-->
         <scene sceneID="MPh-XZ-h6u">
             <objects>
                 <navigationController automaticallyAdjustsScrollViewInsets="NO" id="jnC-wt-aCa" sceneMemberID="viewController">
-                    <tabBarItem key="tabBarItem" title="Map" id="62p-bo-Rml"/>
+                    <tabBarItem key="tabBarItem" image="MapTabLogo" id="62p-bo-Rml">
+                        <inset key="imageInsets" minX="0.0" minY="5" maxX="0.0" maxY="-5"/>
+                    </tabBarItem>
                     <toolbarItems/>
                     <navigationBar key="navigationBar" contentMode="scaleToFill" misplaced="YES" id="8dy-Uq-YIg">
                         <rect key="frame" x="0.0" y="0.0" width="375" height="44"/>
@@ -306,11 +310,13 @@
             </objects>
             <point key="canvasLocation" x="2015.2" y="138.98050974512745"/>
         </scene>
-        <!--Couples-->
+        <!--Navigation Controller-->
         <scene sceneID="Sbu-4i-YaE">
             <objects>
                 <navigationController automaticallyAdjustsScrollViewInsets="NO" id="13Q-Uh-gr0" sceneMemberID="viewController">
-                    <tabBarItem key="tabBarItem" title="Couples" id="N8P-BA-ew6"/>
+                    <tabBarItem key="tabBarItem" image="CouplesTabLogo" id="N8P-BA-ew6">
+                        <inset key="imageInsets" minX="0.0" minY="5" maxX="0.0" maxY="-5"/>
+                    </tabBarItem>
                     <toolbarItems/>
                     <navigationBar key="navigationBar" contentMode="scaleToFill" misplaced="YES" id="x9X-Zv-cbj">
                         <rect key="frame" x="0.0" y="0.0" width="375" height="44"/>
@@ -327,6 +333,9 @@
         </scene>
     </scenes>
     <resources>
+        <image name="CouplesTabLogo" width="24" height="24"/>
+        <image name="MapTabLogo" width="24" height="24"/>
+        <image name="ProfileTabLogo" width="24" height="24"/>
         <image name="car" width="98" height="98"/>
     </resources>
 </document>

@@ -82,8 +82,4 @@ class AuthHelper {
         }
         return true
     }
-    
-
-    
-
 }
