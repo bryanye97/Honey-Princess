@@ -195,8 +195,6 @@ extension MapViewController: CLLocationManagerDelegate {
         circleRenderer.lineWidth = 1.0
         return circleRenderer
     }
-    
-    
 }
 
 extension MapViewController: HandleMapSearch {

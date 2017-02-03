@@ -9,6 +9,7 @@
 import Foundation
 import FirebaseAuth
 import FirebaseDatabase
+import FirebaseStorage
 import FBSDKLoginKit
 
 class AuthHelper {
@@ -37,12 +38,33 @@ class AuthHelper {
             
             guard let uid = user?.uid else { return }
             
-            let graphRequest: FBSDKGraphRequest = FBSDKGraphRequest(graphPath: "/me", parameters: ["fields": "id, name, email"])
+            let graphRequest: FBSDKGraphRequest = FBSDKGraphRequest(graphPath: "/me", parameters: ["fields": "id, name, email, picture"])
             
             graphRequest.start(completionHandler: { (connection, result, error) in
-                let data: [String:AnyObject] = result as! [String : AnyObject]
+                var data: [String:AnyObject] = result as! [String : AnyObject]
                 
-                DatabaseHelper.Instance.saveUser(uid: uid, data: data)
+                let storage = FIRStorage.storage()
+                let storageRef = storage.reference(forURL: "gs://honey-princess.appspot.com")
+                
+                print(data)
+                let pictureDictionary = data["picture"] as! [String: AnyObject]
+                let pictureData = pictureDictionary["data"] as! [String: AnyObject]
+                let urlForPicture = pictureData["url"] as! String
+                
+                if let imageData = NSData(contentsOf: NSURL(string: urlForPicture) as! URL) {
+                    let profilePicRef = storageRef.child(uid + "/profile_pic.jpg")
+                    _ = profilePicRef.put(imageData as Data, metadata: nil, completion: { (metadata, error) in
+                        if error != nil {
+                            print("Error uploading profile picture: \(error)")
+                            return
+                        }
+                        
+                        let downloadUrl = metadata?.downloadURL()
+                        data["picture"] = downloadUrl?.path as AnyObject?
+                        DatabaseHelper.Instance.saveUser(uid: uid, data: data)
+                    })
+                    
+                }
 
             })
         })

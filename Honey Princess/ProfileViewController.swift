@@ -7,7 +7,9 @@
 //
 
 import UIKit
+import FBSDKCoreKit
 import FirebaseAuth
+import FirebaseStorage
 
 class ProfileViewController: UIViewController {
 
@@ -42,5 +44,6 @@ class ProfileViewController: UIViewController {
         } else {
             
         }
+        
     }
 }

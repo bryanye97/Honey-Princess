@@ -21,6 +21,7 @@ class AppDelegate: UIResponder, UIApplicationDelegate {
         FIRApp.configure()
         
         FBSDKApplicationDelegate.sharedInstance().application(application, didFinishLaunchingWithOptions: launchOptions)
+        
         print(AuthHelper.Instance.isLoggedIn())
 
         if AuthHelper.Instance.isLoggedIn() {
