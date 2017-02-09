@@ -8,6 +8,7 @@
 
 /* Begin PBXBuildFile section */
 		864219267379732D1336210E /* Pods_Honey_Princess.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = A1A9863FA653CFF9B9AEFE8C /* Pods_Honey_Princess.framework */; };
+		A22343E21E4C216E00CCCF78 /* GoogleService-Info.plist in Resources */ = {isa = PBXBuildFile; fileRef = A22343E11E4C216E00CCCF78 /* GoogleService-Info.plist */; };
 		A225124B1E0CEBEE00231427 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = A225124A1E0CEBEE00231427 /* AppDelegate.swift */; };
 		A22512501E0CEBEE00231427 /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = A225124E1E0CEBEE00231427 /* Main.storyboard */; };
 		A22512521E0CEBEE00231427 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = A22512511E0CEBEE00231427 /* Assets.xcassets */; };
@@ -38,7 +39,6 @@
 		A295CB4A1E404D3D0007AF85 /* OpenSans-Semibold.ttf in Resources */ = {isa = PBXBuildFile; fileRef = A295CB401E404D2C0007AF85 /* OpenSans-Semibold.ttf */; };
 		A295CB4B1E404D3D0007AF85 /* OpenSans-SemiboldItalic.ttf in Resources */ = {isa = PBXBuildFile; fileRef = A295CB411E404D2C0007AF85 /* OpenSans-SemiboldItalic.ttf */; };
 		A295CB4D1E404E890007AF85 /* Global Functions.swift in Sources */ = {isa = PBXBuildFile; fileRef = A295CB4C1E404E890007AF85 /* Global Functions.swift */; };
-		A2B90B9B1E274B73001F0817 /* GoogleService-Info.plist in Resources */ = {isa = PBXBuildFile; fileRef = A2B90B9A1E274B73001F0817 /* GoogleService-Info.plist */; };
 		A2D748A71E3B195E0071AD90 /* User.swift in Sources */ = {isa = PBXBuildFile; fileRef = A2D748A61E3B195E0071AD90 /* User.swift */; };
 		A2D748A91E3B1D370071AD90 /* UsersViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = A2D748A81E3B1D370071AD90 /* UsersViewController.swift */; };
 /* End PBXBuildFile section */
@@ -47,6 +47,7 @@
 		8B62FF14E0AAF4A8EFA38E58 /* Pods-Honey Princess.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-Honey Princess.debug.xcconfig"; path = "Pods/Target Support Files/Pods-Honey Princess/Pods-Honey Princess.debug.xcconfig"; sourceTree = "<group>"; };
 		A1029C46D3CCEB2D65CAA145 /* Pods-Honey Princess.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-Honey Princess.release.xcconfig"; path = "Pods/Target Support Files/Pods-Honey Princess/Pods-Honey Princess.release.xcconfig"; sourceTree = "<group>"; };
 		A1A9863FA653CFF9B9AEFE8C /* Pods_Honey_Princess.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_Honey_Princess.framework; sourceTree = BUILT_PRODUCTS_DIR; };
+		A22343E11E4C216E00CCCF78 /* GoogleService-Info.plist */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.plist.xml; path = "GoogleService-Info.plist"; sourceTree = "<group>"; };
 		A22512471E0CEBEE00231427 /* Honey Princess.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = "Honey Princess.app"; sourceTree = BUILT_PRODUCTS_DIR; };
 		A225124A1E0CEBEE00231427 /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		A225124F1E0CEBEE00231427 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/Main.storyboard; sourceTree = "<group>"; };
@@ -80,7 +81,6 @@
 		A295CB401E404D2C0007AF85 /* OpenSans-Semibold.ttf */ = {isa = PBXFileReference; lastKnownFileType = file; path = "OpenSans-Semibold.ttf"; sourceTree = "<group>"; };
 		A295CB411E404D2C0007AF85 /* OpenSans-SemiboldItalic.ttf */ = {isa = PBXFileReference; lastKnownFileType = file; path = "OpenSans-SemiboldItalic.ttf"; sourceTree = "<group>"; };
 		A295CB4C1E404E890007AF85 /* Global Functions.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = "Global Functions.swift"; sourceTree = "<group>"; };
-		A2B90B9A1E274B73001F0817 /* GoogleService-Info.plist */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.plist.xml; path = "GoogleService-Info.plist"; sourceTree = "<group>"; };
 		A2D748A61E3B195E0071AD90 /* User.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = User.swift; sourceTree = "<group>"; };
 		A2D748A81E3B1D370071AD90 /* UsersViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = UsersViewController.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
@@ -141,7 +141,7 @@
 				A22512531E0CEBEE00231427 /* LaunchScreen.storyboard */,
 				A22512561E0CEBEE00231427 /* Info.plist */,
 				A25073061E383B77008DD866 /* HoneyProcess.xcdatamodeld */,
-				A2B90B9A1E274B73001F0817 /* GoogleService-Info.plist */,
+				A22343E11E4C216E00CCCF78 /* GoogleService-Info.plist */,
 			);
 			path = "Honey Princess";
 			sourceTree = "<group>";
@@ -298,6 +298,7 @@
 			files = (
 				A22512551E0CEBEE00231427 /* LaunchScreen.storyboard in Resources */,
 				A295CB4B1E404D3D0007AF85 /* OpenSans-SemiboldItalic.ttf in Resources */,
+				A22343E21E4C216E00CCCF78 /* GoogleService-Info.plist in Resources */,
 				A295CB451E404D3D0007AF85 /* OpenSans-ExtraBoldItalic.ttf in Resources */,
 				A295CB481E404D3D0007AF85 /* OpenSans-LightItalic.ttf in Resources */,
 				A22512521E0CEBEE00231427 /* Assets.xcassets in Resources */,
@@ -305,7 +306,6 @@
 				A295CB421E404D3D0007AF85 /* OpenSans-Bold.ttf in Resources */,
 				A295CB441E404D3D0007AF85 /* OpenSans-ExtraBold.ttf in Resources */,
 				A295CB431E404D3D0007AF85 /* OpenSans-BoldItalic.ttf in Resources */,
-				A2B90B9B1E274B73001F0817 /* GoogleService-Info.plist in Resources */,
 				A22512501E0CEBEE00231427 /* Main.storyboard in Resources */,
 				A295CB471E404D3D0007AF85 /* OpenSans-Light.ttf in Resources */,
 				A295CB491E404D3D0007AF85 /* OpenSans-Regular.ttf in Resources */,
@@ -510,7 +510,7 @@
 				DEVELOPMENT_TEAM = WZ4NEVB3RP;
 				INFOPLIST_FILE = "Honey Princess/Info.plist";
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
-				PRODUCT_BUNDLE_IDENTIFIER = "com.bryanye.Honey-Princess";
+				PRODUCT_BUNDLE_IDENTIFIER = com.bryanye.Priney;
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				SWIFT_VERSION = 3.0;
 			};
@@ -525,7 +525,7 @@
 				DEVELOPMENT_TEAM = WZ4NEVB3RP;
 				INFOPLIST_FILE = "Honey Princess/Info.plist";
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
-				PRODUCT_BUNDLE_IDENTIFIER = "com.bryanye.Honey-Princess";
+				PRODUCT_BUNDLE_IDENTIFIER = com.bryanye.Priney;
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				SWIFT_VERSION = 3.0;
 			};

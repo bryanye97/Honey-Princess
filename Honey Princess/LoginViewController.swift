@@ -9,6 +9,7 @@
 import UIKit
 import FBSDKLoginKit
 import FirebaseAuth
+import FirebaseStorage
 
 class LoginViewController: UIViewController {
     
@@ -50,20 +51,6 @@ class LoginViewController: UIViewController {
         customFBButton.leadingAnchor.constraint(equalTo: self.view.layoutMarginsGuide.leadingAnchor, constant: 16).isActive = true
         customFBButton.trailingAnchor.constraint(equalTo: self.view.layoutMarginsGuide.trailingAnchor, constant: -16).isActive = true
         customFBButton.heightAnchor.constraint(equalToConstant: 50).isActive = true
-        
-        
-        
-        
-        
-        
-        
-        
-        
-        
-        
-        
-        
-        
         
         customFBButton.addTarget(self, action: #selector(handleCustomFBLogin), for: .touchUpInside)
     }
@@ -134,10 +121,57 @@ class LoginViewController: UIViewController {
                 return
             }
             
-            AuthHelper.Instance.logInWithFacebook()
-            self.dismiss(animated: true, completion: nil)
+            self.logInWithFacebook()
         }
     }
+    
+    func logInWithFacebook() {
+        
+        let accessToken = FBSDKAccessToken.current()
+        guard let accessTokenString = accessToken?.tokenString else { return }
+        let credentials = FIRFacebookAuthProvider.credential(withAccessToken: accessTokenString)
+        
+        FIRAuth.auth()?.signIn(with: credentials, completion: { (user, error) in
+            if error != nil {
+                print("Something went wrong with our FB user: \(error)")
+                return
+            }
+            
+            guard let uid = user?.uid else { return }
+            
+            let graphRequest: FBSDKGraphRequest = FBSDKGraphRequest(graphPath: "/me", parameters: ["fields": "id, name, email, picture"])
+            
+            graphRequest.start(completionHandler: { (connection, result, error) in
+                var data: [String:AnyObject] = result as! [String : AnyObject]
+                
+                let storage = FIRStorage.storage()
+                let storageRef = storage.reference(forURL: "gs://honey-princess.appspot.com")
+                
+                print(data)
+                let pictureDictionary = data["picture"] as! [String: AnyObject]
+                let pictureData = pictureDictionary["data"] as! [String: AnyObject]
+                let urlForPicture = pictureData["url"] as! String
+                
+                if let imageData = NSData(contentsOf: NSURL(string: urlForPicture) as! URL) {
+                    let profilePicRef = storageRef.child(uid + "/profile_pic.jpg")
+                    _ = profilePicRef.put(imageData as Data, metadata: nil, completion: { (metadata, error) in
+                        if error != nil {
+                            print("Error uploading profile picture: \(error)")
+                            return
+                        }
+                        
+                        let downloadUrl = metadata?.downloadURL()?.absoluteString
+                        data["picture"] = downloadUrl as AnyObject?
+                        DatabaseHelper.Instance.saveUser(uid: uid, data: data)
+                        self.dismiss(animated: true, completion: nil)
+                    })
+                    
+                }
+                
+            })
+        })
+    }
+
 }
 
 extension LoginViewController: FBSDKLoginButtonDelegate {
@@ -147,8 +181,9 @@ extension LoginViewController: FBSDKLoginButtonDelegate {
     
     func loginButton(_ loginButton: FBSDKLoginButton!, didCompleteWith result: FBSDKLoginManagerLoginResult!, error: Error!) {
         if error != nil {
-            print(error)
+            print("Error logging in \(error)")
             return
         }
+        self.dismiss(animated: true, completion: nil)
     }
 }

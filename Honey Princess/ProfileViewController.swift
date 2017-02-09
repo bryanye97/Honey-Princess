@@ -29,6 +29,7 @@ class ProfileViewController: UIViewController {
     
     //MARK: - Preparations
     func setupViews() {
+        print(AuthHelper.Instance.isLoggedIn())
         if AuthHelper.Instance.isLoggedIn() {
             let uid = AuthHelper.Instance.idForCurrentUser()
             DatabaseHelper.Instance.fetchSingleUserDelegate = self

@@ -35,7 +35,7 @@ class MapViewController: UIViewController {
         prepareLocationManager()
         checkLocationStatus()
         prepareSearchBar()
-        prepareEventHandler()
+//        prepareEventHandler()
     }
     
     
