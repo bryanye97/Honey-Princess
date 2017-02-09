@@ -7,6 +7,7 @@
 //
 
 import UIKit
+import DZNEmptyDataSet
 
 class UsersViewController: UIViewController {
     
@@ -22,6 +23,7 @@ class UsersViewController: UIViewController {
     override func viewDidLoad() {
         super.viewDidLoad()
         prepareTableView()
+        prepareDZNEmptyDataSet()
     }
     
     
@@ -32,6 +34,11 @@ class UsersViewController: UIViewController {
         tableView.backgroundColor = .honeyPrincessGold()
         DatabaseHelper.Instance.fetchUsersDelegate = self
         DatabaseHelper.Instance.getSingleUsers()
+    }
+    
+    func prepareDZNEmptyDataSet() {
+        tableView.emptyDataSetSource = self
+        tableView.emptyDataSetDelegate = self
     }
 }
 
@@ -69,3 +76,68 @@ extension UsersViewController: UITableViewDataSource {
         return users.count
     }
 }
+
+extension UsersViewController: DZNEmptyDataSetSource {
+    func image(forEmptyDataSet scrollView: UIScrollView!) -> UIImage! {
+        return UIImage(named: "Icon-98")
+    }
+    
+    func title(forEmptyDataSet scrollView: UIScrollView!) -> NSAttributedString! {
+        var titleFont: String?
+        
+        if openSansExists() {
+            titleFont = "OpenSans"
+        } else {
+            titleFont = "HelveticaNeue"
+        }
+        
+        let attributes: [String: Any] = [
+            NSFontAttributeName: UIFont(name: titleFont ?? "HelveticaNeue", size: 18)!,
+            NSForegroundColorAttributeName: UIColor.white
+        ]
+        
+        let titleText = "Sorry"
+        
+        let title = NSAttributedString(string: titleText, attributes: attributes)
+        return title
+    }
+    
+    func description(forEmptyDataSet scrollView: UIScrollView!) -> NSAttributedString! {
+        let descriptionText = "There are currently no single people to match with"
+        
+        let paragraph = NSMutableParagraphStyle()
+        paragraph.lineBreakMode = .byWordWrapping
+        paragraph.alignment = .center
+        
+        var descriptionFont: String?
+        
+        if openSansExists() {
+            descriptionFont = "OpenSans"
+        } else {
+            descriptionFont = "HelveticaNeue"
+        }
+        
+        let attributes: [String: Any] = [
+            NSFontAttributeName: UIFont(name: descriptionFont ?? "HelveticaNeue", size: 14)!,
+            NSForegroundColorAttributeName: UIColor.white,
+            NSParagraphStyleAttributeName: paragraph
+        ]
+        
+        let description = NSAttributedString(string: descriptionText, attributes: attributes)
+        
+        return description
+    }
+    
+    func backgroundColor(forEmptyDataSet scrollView: UIScrollView!) -> UIColor! {
+        return UIColor.honeyPrincessGold()
+    }
+    
+}
+
+extension UsersViewController: DZNEmptyDataSetDelegate {
+    func emptyDataSetShouldDisplay(_ scrollView: UIScrollView!) -> Bool {
+        return true
+    }
+    
+}
+

@@ -11,6 +11,9 @@
         <capability name="documents saved in the Xcode 8 format" minToolsVersion="8.0"/>
     </dependencies>
     <customFonts key="customFonts">
+        <array key="OpenSans-Regular.ttf">
+            <string>OpenSans</string>
+        </array>
         <array key="OpenSans-Semibold.ttf">
             <string>OpenSans-Semibold</string>
         </array>
@@ -95,7 +98,7 @@
                         <color key="backgroundColor" red="0.90196078431372551" green="0.68627450980392157" blue="0.29411764705882354" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                         <constraints>
                             <constraint firstItem="Wt4-la-9oj" firstAttribute="leading" secondItem="fTJ-7D-g6x" secondAttribute="leading" id="7lX-ee-xJT"/>
-                            <constraint firstItem="Wt4-la-9oj" firstAttribute="top" secondItem="zhI-kg-ZU5" secondAttribute="bottom" id="Qiq-Gl-BdQ"/>
+                            <constraint firstItem="Wt4-la-9oj" firstAttribute="top" secondItem="zhI-kg-ZU5" secondAttribute="bottom" id="ViB-Ly-INr"/>
                             <constraint firstItem="C9n-e3-Jcq" firstAttribute="top" secondItem="Wt4-la-9oj" secondAttribute="bottom" id="WX2-A5-LX7"/>
                             <constraint firstAttribute="trailing" secondItem="Wt4-la-9oj" secondAttribute="trailing" id="us7-Lx-QA7"/>
                         </constraints>
@@ -121,24 +124,21 @@
                         <rect key="frame" x="0.0" y="0.0" width="375" height="667"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
-                            <button opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="HUX-xN-6h6">
-                                <rect key="frame" x="166" y="472" width="43" height="30"/>
-                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
-                                <state key="normal" title="Match"/>
-                                <connections>
-                                    <action selector="matchWithAnotherUser:" destination="wh3-5m-QTC" eventType="touchUpInside" id="f24-oc-8kp"/>
-                                </connections>
-                            </button>
-                            <button opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="35y-2w-eWm">
-                                <rect key="frame" x="162" y="524" width="48" height="30"/>
-                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
-                                <state key="normal" title="Logout"/>
+                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="35y-2w-eWm">
+                                <rect key="frame" x="148" y="535" width="79" height="75"/>
+                                <constraints>
+                                    <constraint firstAttribute="height" constant="75" id="I5c-ck-tG3"/>
+                                </constraints>
+                                <fontDescription key="fontDescription" name="OpenSans" family="Open Sans" pointSize="25"/>
+                                <state key="normal" title="Logout">
+                                    <color key="titleColor" red="1" green="1" blue="1" alpha="1" colorSpace="calibratedRGB"/>
+                                </state>
                                 <connections>
                                     <action selector="logout:" destination="wh3-5m-QTC" eventType="touchUpInside" id="0t1-WO-j2y"/>
                                 </connections>
                             </button>
                             <stackView opaque="NO" contentMode="scaleToFill" spacing="10" translatesAutoresizingMaskIntoConstraints="NO" id="dvC-hJ-INm">
-                                <rect key="frame" x="135.5" y="89" width="105" height="85"/>
+                                <rect key="frame" x="135.5" y="89" width="105.5" height="85"/>
                                 <subviews>
                                     <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" translatesAutoresizingMaskIntoConstraints="NO" id="ffC-eV-jfZ">
                                         <rect key="frame" x="0.0" y="0.0" width="85" height="85"/>
@@ -149,18 +149,35 @@
                                         </constraints>
                                     </imageView>
                                     <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="~" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="qDW-1N-2ZG">
-                                        <rect key="frame" x="95" y="0.0" width="10" height="85"/>
+                                        <rect key="frame" x="95" y="0.0" width="10.5" height="85"/>
                                         <fontDescription key="fontDescription" name="OpenSans-Semibold" family="Open Sans" pointSize="17"/>
                                         <color key="textColor" red="0.98940596186150198" green="0.99458925947882837" blue="1" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                                         <nil key="highlightedColor"/>
                                     </label>
                                 </subviews>
                             </stackView>
+                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="HUX-xN-6h6">
+                                <rect key="frame" x="112.5" y="479" width="150" height="48"/>
+                                <constraints>
+                                    <constraint firstAttribute="height" constant="48" id="Zo8-2G-YF9"/>
+                                </constraints>
+                                <fontDescription key="fontDescription" name="OpenSans" family="Open Sans" pointSize="25"/>
+                                <state key="normal" title="Find A Match">
+                                    <color key="titleColor" red="1" green="1" blue="1" alpha="1" colorSpace="calibratedRGB"/>
+                                </state>
+                                <connections>
+                                    <action selector="matchWithAnotherUser:" destination="wh3-5m-QTC" eventType="touchUpInside" id="f24-oc-8kp"/>
+                                </connections>
+                            </button>
                         </subviews>
                         <color key="backgroundColor" red="0.90196078431372551" green="0.68627450980392157" blue="0.29411764705882354" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                         <constraints>
                             <constraint firstItem="dvC-hJ-INm" firstAttribute="top" secondItem="liQ-Gr-AyP" secondAttribute="bottom" constant="25" id="4Gv-H4-LGk"/>
+                            <constraint firstItem="35y-2w-eWm" firstAttribute="top" secondItem="HUX-xN-6h6" secondAttribute="bottom" constant="8" id="CSl-21-iJw"/>
+                            <constraint firstItem="FpB-1q-fL4" firstAttribute="top" secondItem="35y-2w-eWm" secondAttribute="bottom" constant="8" id="MTl-GY-Eay"/>
                             <constraint firstItem="dvC-hJ-INm" firstAttribute="centerX" secondItem="Jxb-Hr-5wY" secondAttribute="centerX" id="W14-8p-tCL"/>
+                            <constraint firstItem="35y-2w-eWm" firstAttribute="centerX" secondItem="Jxb-Hr-5wY" secondAttribute="centerX" id="vlC-60-3kI"/>
+                            <constraint firstItem="HUX-xN-6h6" firstAttribute="centerX" secondItem="Jxb-Hr-5wY" secondAttribute="centerX" id="zJ7-cT-qvB"/>
                         </constraints>
                     </view>
                     <navigationItem key="navigationItem" id="Tiq-GQ-aLi"/>
@@ -318,7 +335,7 @@
                         <inset key="imageInsets" minX="0.0" minY="5" maxX="0.0" maxY="-5"/>
                     </tabBarItem>
                     <toolbarItems/>
-                    <navigationBar key="navigationBar" contentMode="scaleToFill" id="9IE-z7-fvz">
+                    <navigationBar key="navigationBar" contentMode="scaleToFill" misplaced="YES" id="9IE-z7-fvz">
                         <rect key="frame" x="0.0" y="0.0" width="375" height="44"/>
                         <autoresizingMask key="autoresizingMask"/>
                     </navigationBar>
