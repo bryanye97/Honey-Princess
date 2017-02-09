@@ -49,13 +49,34 @@ class ProfileViewController: UIViewController {
             DatabaseHelper.Instance.getUserForUid(uid: uid)
             
         }
+        
+        circleImageView()
+    }
+    
+    func circleImageView() {
+        self.profileImageView.layer.cornerRadius = self.profileImageView.frame.size.width/2
+        self.profileImageView.clipsToBounds = true
     }
 }
 
 extension ProfileViewController: FetchSingleUser {
     func dataReceived(user: User) {
         displayNameLabel.text = user.name
-        let profilePictureData = NSData(contentsOf: URL(fileURLWithPath: user.profilePicture))
-        profileImageView.image = UIImage(data: profilePictureData! as Data)
+        guard user.profilePicture != "" else { return }
+        let url = URL(string: user.profilePicture)
+        let request = NSMutableURLRequest(url: url!)
+        URLSession.shared.dataTask(with: request as URLRequest) { (data, response, error) in
+            if error != nil {
+                print(error)
+                return
+            }
+            
+            print(data)
+            
+            self.profileImageView.image = UIImage(data: data!)
+
+        }.resume()
+            
+        
     }
 }
