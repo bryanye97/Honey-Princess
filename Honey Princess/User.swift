@@ -13,12 +13,14 @@ class User {
     private var _facebookId = ""
     private var _name = ""
     private var _email = ""
+    private var _profilePicture = ""
     
-    init(firebaseId: String, facebookId: String, name: String, email: String) {
+    init(firebaseId: String, facebookId: String, name: String, email: String, profilePicture: String) {
         _firebaseId = firebaseId
         _facebookId = facebookId
         _name = name
         _email = email
+        _profilePicture = profilePicture
     }
     
     var name: String {
@@ -35,5 +37,9 @@ class User {
     
     var email: String {
         return _email
+    }
+    
+    var profilePicture: String {
+        return _profilePicture
     }
 }

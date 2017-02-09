@@ -30,6 +30,10 @@ class AppDelegate: UIResponder, UIApplicationDelegate {
             showLoginScreen()
         }
         
+        UINavigationBar.appearance().barTintColor = .honeyPrincessGold()
+        UINavigationBar.appearance().tintColor = UIColor.white
+        UINavigationBar.appearance().titleTextAttributes = [NSForegroundColorAttributeName:UIColor.white]
+        
         return true
     }
     

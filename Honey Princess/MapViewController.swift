@@ -42,6 +42,7 @@ class MapViewController: UIViewController {
     // MARK: - Preparations
     func prepareMapView() {
         mapView.delegate = self
+        mapView.tintColor = .honeyPrincessGold()
     }
     
     func prepareEventHandler() {

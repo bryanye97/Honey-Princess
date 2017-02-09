@@ -8,7 +8,7 @@
 
 import UIKit
 
-func doesOpenSansExist() -> Bool {
+func openSansExists() -> Bool {
     print(UIFont.fontNames(forFamilyName: "Open Sans"))
     
     let fontFamilies = UIFont.familyNames

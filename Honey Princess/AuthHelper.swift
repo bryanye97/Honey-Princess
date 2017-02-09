@@ -59,8 +59,8 @@ class AuthHelper {
                             return
                         }
                         
-                        let downloadUrl = metadata?.downloadURL()
-                        data["picture"] = downloadUrl?.path as AnyObject?
+                        let downloadUrl = metadata?.downloadURL()?.absoluteString
+                        data["picture"] = downloadUrl as AnyObject?
                         DatabaseHelper.Instance.saveUser(uid: uid, data: data)
                     })
                     

@@ -29,12 +29,12 @@ class UsersViewController: UIViewController {
     func prepareTableView() {
         tableView.delegate = self
         tableView.dataSource = self
-        DatabaseHelper.Instance.delegate = self
+        DatabaseHelper.Instance.fetchUsersDelegate = self
         DatabaseHelper.Instance.getUsers()
     }
 }
 
-extension UsersViewController: FetchData {
+extension UsersViewController: FetchUsers {
     func dataReceived(users: [User]) {
         self.users = users
         

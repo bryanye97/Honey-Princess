@@ -14,7 +14,7 @@ extension UIColor {
     }
     
     static func honeyPrincessGold() -> UIColor {
-        //E6AF4B
+        //
         return UIColor(red: 230/255.0, green: 175/255.0, blue: 75/255.0, alpha: 1)
     }
     

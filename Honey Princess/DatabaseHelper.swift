@@ -9,8 +9,12 @@
 import Foundation
 import FirebaseDatabase
 
-protocol FetchData: class {
+protocol FetchUsers: class {
     func dataReceived(users: [User])
+}
+
+protocol FetchSingleUser: class {
+    func dataReceived(user: User)
 }
 
 class DatabaseHelper {
@@ -21,7 +25,8 @@ class DatabaseHelper {
     
     private init () { }
     
-    weak var delegate: FetchData?
+    weak var fetchUsersDelegate: FetchUsers?
+    weak var fetchSingleUserDelegate: FetchSingleUser?
     
     static var Instance: DatabaseHelper {
         return _instance
@@ -43,7 +48,7 @@ class DatabaseHelper {
         return databaseRef.child("couples")
     }
     
-
+    
     //MARK: - User Functions
     func saveUser(uid: String, data: [String: AnyObject]) {
         let userReference = DatabaseHelper.Instance.usersRef.child(uid)
@@ -70,8 +75,11 @@ class DatabaseHelper {
                             if let email = userData["email"] as? String {
                                 if let facebookId = userData["id"] as? String {
                                     if let name = userData["name"] as? String {
-                                        let user = User(firebaseId: firebaseId, facebookId: facebookId, name: name, email: email)
-                                        users.append(user)
+                                        if let profilePicture = userData["picture"] as? String {
+                                            let user = User(firebaseId: firebaseId, facebookId: facebookId, name: name, email: email, profilePicture: profilePicture)
+                                            users.append(user)
+                                        }
+                                        
                                     }
                                 }
                             }
@@ -81,7 +89,24 @@ class DatabaseHelper {
                     }
                 }
             }
-            self.delegate?.dataReceived(users: users)
+            self.fetchUsersDelegate?.dataReceived(users: users)
+        }
+    }
+    
+    func getUserForUid(uid: String) {
+        usersRef.child(uid).observeSingleEvent(of: FIRDataEventType.value) { (snapshot: FIRDataSnapshot) in
+            if let userData = snapshot.value as? NSDictionary {
+                if let email = userData["email"] as? String {
+                    if let facebookId = userData["id"] as? String {
+                        if let name = userData["name"] as? String {
+                            if let profilePicture = userData["picture"] as? String {
+                                let user = User(firebaseId: uid, facebookId: facebookId, name: name, email: email, profilePicture: profilePicture)
+                                self.fetchSingleUserDelegate?.dataReceived(user: user)
+                            }
+                        }
+                    }
+                }
+            }
         }
     }
     
@@ -114,3 +139,4 @@ class DatabaseHelper {
         }
     }
 }
+
