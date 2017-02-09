@@ -22,6 +22,7 @@ class MapViewController: UIViewController {
     let geocoder = CLGeocoder()
     var resultSearchController: UISearchController?
     var selectedPin: MKPlacemark?
+    var userIsInCouple: Bool?
     
     // MARK: - IBOutlets
     @IBOutlet weak var mapView: MKMapView!
@@ -37,7 +38,7 @@ class MapViewController: UIViewController {
         prepareEventHandler()
     }
     
-
+    
     
     // MARK: - Preparations
     func prepareMapView() {
@@ -47,8 +48,16 @@ class MapViewController: UIViewController {
     
     func prepareEventHandler() {
         EventHandler.Instance.delegate = self
-        EventHandler.Instance.observeEventsForCurrentUser()
-//        EventHandler.Instance.observeEvents()
+        
+        DatabaseHelper.Instance.doesCouplesKeyExistForCurrentUser(completionHandler: { (couplesKeyExists: Bool) in
+            self.userIsInCouple = couplesKeyExists
+            guard self.userIsInCouple != nil else { return }
+            if self.userIsInCouple! {
+                EventHandler.Instance.observeEventsForCurrentUser()
+            } else {
+                self.alertUser(title: "Sorry", message: "You Aren't In A Couple")
+            }
+        })
     }
     
     func prepareLocationManager() {
@@ -115,11 +124,18 @@ class MapViewController: UIViewController {
     }
     
     //MARK: - IBActions
-    
     @IBAction func recenterMap(_ sender: UIButton) {
         locationManager.startUpdatingLocation()
     }
     
+    //MARK: - Alert User
+    private func alertUser(title: String, message: String) {
+        let alertController = UIAlertController(title: title, message: message, preferredStyle: .alert)
+        let okAction = UIAlertAction(title: "OK", style: .default, handler: nil)
+        alertController.addAction(okAction)
+        present(alertController, animated: true, completion: nil)
+        
+    }
 }
 
 extension MapViewController: MKMapViewDelegate {
@@ -129,7 +145,7 @@ extension MapViewController: MKMapViewDelegate {
         let reuseId = "pin"
         var pinView = mapView.dequeueReusableAnnotationView(withIdentifier: reuseId) as? MKPinAnnotationView
         pinView = MKPinAnnotationView(annotation: annotation, reuseIdentifier: reuseId)
-        pinView?.pinTintColor = UIColor.orange
+        pinView?.pinTintColor = .honeyPrincessOrange()
         pinView?.canShowCallout = true
         let smallSquare = CGSize(width: 30, height: 30)
         let button = UIButton(frame: CGRect(origin: CGPoint.zero, size: smallSquare))
@@ -162,9 +178,6 @@ extension MapViewController: CLLocationManagerDelegate {
         mapView.setRegion(region, animated: true)
         
         setupCircleOverlay(userLocation: center)
-        
-        //        UserConstants.currentUser.location = center
-        //        UserConstants.currentUser.time = Int(TimeHelper.getTimeStamp())
         
         locationManager.stopUpdatingLocation()
     }

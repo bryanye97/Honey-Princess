@@ -29,13 +29,15 @@ class UsersViewController: UIViewController {
     func prepareTableView() {
         tableView.delegate = self
         tableView.dataSource = self
+        tableView.backgroundColor = .honeyPrincessGold()
         DatabaseHelper.Instance.fetchUsersDelegate = self
-        DatabaseHelper.Instance.getUsers()
+        DatabaseHelper.Instance.getSingleUsers()
     }
 }
 
 extension UsersViewController: FetchUsers {
     func dataReceived(users: [User]) {
+        print(users)
         self.users = users
         
         tableView.reloadData()
@@ -48,6 +50,7 @@ extension UsersViewController: UITableViewDelegate {
         let partner = users[indexPath.row]
         let partnerId = partner.firebaseId
         DatabaseHelper.Instance.saveCouple(user1id: selfId, user2id: partnerId)
+        dismiss(animated: true, completion: nil)
     }
 }
 
@@ -55,7 +58,9 @@ extension UsersViewController: UITableViewDataSource {
     func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
         let user = users[indexPath.row]
         let cell = tableView.dequeueReusableCell(withIdentifier: "cell")
-        cell?.textLabel?.text = user.email
+        cell?.textLabel?.text = "\(user.name): \(user.email)"
+        cell?.textLabel?.textColor = .white
+        cell?.backgroundColor = .clear
         
         return cell!
     }
