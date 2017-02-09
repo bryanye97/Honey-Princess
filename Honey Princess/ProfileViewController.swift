@@ -24,23 +24,7 @@ class ProfileViewController: UIViewController {
         setupViews()
     }
     
-    //    func lol() {
-    //        if let user = FIRAuth.auth()?.currentUser {
-    //            self.profileImageView.layer.cornerRadius = self.profileImageView.frame.size.width/2
-    //            self.profileImageView.clipsToBounds = true
-    //
-    //            let name = user.displayName
-    ////            let email = user.email
-    //            let photoUrl = user.photoURL
-    ////            let uid = user.uid
-    //
-    //            self.displayNameLabel.text = name
-    //
-    //            let data = NSData(contentsOf: photoUrl!)
-    //            self.profileImageView.image = UIImage(data: data! as Data)
-    //        }
-    //
-    //    }
+    //MARK: - Preparations
     
     func setupViews() {
         if AuthHelper.Instance.isLoggedIn() {
@@ -57,6 +41,30 @@ class ProfileViewController: UIViewController {
         self.profileImageView.layer.cornerRadius = self.profileImageView.frame.size.width/2
         self.profileImageView.clipsToBounds = true
     }
+    
+    //MARK: - IBActions
+    @IBAction func matchWithAnotherUser(_ sender: UIButton) {
+    }
+    
+    @IBAction func logout(_ sender: UIButton) {
+        if AuthHelper.Instance.logOut() {
+            print("logged out")
+            AuthHelper.Instance.logOutOfFacebook()
+            showLoginScreen()
+        }
+    }
+    
+    //MARK: - Logout Helpers
+    func showLoginScreen() {
+        let appDelegateTemp = UIApplication.shared.delegate
+        let storyboard = UIStoryboard(name: "Main", bundle: nil)
+        let loginViewController = storyboard.instantiateViewController(withIdentifier: "LoginViewController")
+        
+        appDelegateTemp?.window??.makeKeyAndVisible()
+        
+        appDelegateTemp?.window??.rootViewController?.present(loginViewController, animated: true, completion: nil)
+    }
+    
 }
 
 extension ProfileViewController: FetchSingleUser {
@@ -67,11 +75,11 @@ extension ProfileViewController: FetchSingleUser {
         let request = NSMutableURLRequest(url: url!)
         URLSession.shared.dataTask(with: request as URLRequest) { (data, response, error) in
             if error != nil {
-                print(error)
+                print("Error Downloading Profile Picture: \(error)")
                 return
             }
             
-            print(data)
+            print("Profile Picture Data: \(data)")
             
             self.profileImageView.image = UIImage(data: data!)
 

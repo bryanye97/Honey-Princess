@@ -118,22 +118,6 @@ class MapViewController: UIViewController {
     
     @IBAction func recenterMap(_ sender: UIButton) {
         locationManager.startUpdatingLocation()
-        if AuthHelper.Instance.logOut() {
-            print("logged out")
-            AuthHelper.Instance.logOutOfFacebook()
-            showLoginScreen()
-        }
-    }
-    
-    //MARK: - Show Login Screen
-    func showLoginScreen() {
-        let appDelegateTemp = UIApplication.shared.delegate
-        let storyboard = UIStoryboard(name: "Main", bundle: nil)
-        let loginViewController = storyboard.instantiateViewController(withIdentifier: "LoginViewController")
-        
-        appDelegateTemp?.window??.makeKeyAndVisible()
-        
-        appDelegateTemp?.window??.rootViewController?.present(loginViewController, animated: true, completion: nil)
     }
     
 }
@@ -149,7 +133,7 @@ extension MapViewController: MKMapViewDelegate {
         pinView?.canShowCallout = true
         let smallSquare = CGSize(width: 30, height: 30)
         let button = UIButton(frame: CGRect(origin: CGPoint.zero, size: smallSquare))
-        button.setBackgroundImage(UIImage(named: "car"), for: .normal)
+        button.setBackgroundImage(UIImage(named: "Icon-Original"), for: .normal)
         button.addTarget(self, action: #selector(MapViewController.getDirections), for: .touchUpInside)
         pinView?.leftCalloutAccessoryView = button
         return pinView
