@@ -9,6 +9,7 @@
 /* Begin PBXBuildFile section */
 		864219267379732D1336210E /* Pods_Honey_Princess.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = A1A9863FA653CFF9B9AEFE8C /* Pods_Honey_Princess.framework */; };
 		A22343E21E4C216E00CCCF78 /* GoogleService-Info.plist in Resources */ = {isa = PBXBuildFile; fileRef = A22343E11E4C216E00CCCF78 /* GoogleService-Info.plist */; };
+		A22343E41E4D418F00CCCF78 /* SignUpViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = A22343E31E4D418F00CCCF78 /* SignUpViewController.swift */; };
 		A225124B1E0CEBEE00231427 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = A225124A1E0CEBEE00231427 /* AppDelegate.swift */; };
 		A22512501E0CEBEE00231427 /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = A225124E1E0CEBEE00231427 /* Main.storyboard */; };
 		A22512521E0CEBEE00231427 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = A22512511E0CEBEE00231427 /* Assets.xcassets */; };
@@ -48,6 +49,7 @@
 		A1029C46D3CCEB2D65CAA145 /* Pods-Honey Princess.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-Honey Princess.release.xcconfig"; path = "Pods/Target Support Files/Pods-Honey Princess/Pods-Honey Princess.release.xcconfig"; sourceTree = "<group>"; };
 		A1A9863FA653CFF9B9AEFE8C /* Pods_Honey_Princess.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_Honey_Princess.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 		A22343E11E4C216E00CCCF78 /* GoogleService-Info.plist */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.plist.xml; path = "GoogleService-Info.plist"; sourceTree = "<group>"; };
+		A22343E31E4D418F00CCCF78 /* SignUpViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = SignUpViewController.swift; sourceTree = "<group>"; };
 		A22512471E0CEBEE00231427 /* Honey Princess.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = "Honey Princess.app"; sourceTree = BUILT_PRODUCTS_DIR; };
 		A225124A1E0CEBEE00231427 /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		A225124F1E0CEBEE00231427 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/Main.storyboard; sourceTree = "<group>"; };
@@ -150,6 +152,7 @@
 			isa = PBXGroup;
 			children = (
 				A250730F1E397C70008DD866 /* LoginViewController.swift */,
+				A22343E31E4D418F00CCCF78 /* SignUpViewController.swift */,
 				A25072FD1E3832FE008DD866 /* MapViewController.swift */,
 				A250730B1E38752B008DD866 /* LocationSearchViewController.swift */,
 				A25073161E3AF885008DD866 /* ProfileViewController.swift */,
@@ -374,6 +377,7 @@
 				A2D748A91E3B1D370071AD90 /* UsersViewController.swift in Sources */,
 				A250730E1E3883C1008DD866 /* EventHandler.swift in Sources */,
 				A295CB021E400FEB0007AF85 /* CouplesViewController.swift in Sources */,
+				A22343E41E4D418F00CCCF78 /* SignUpViewController.swift in Sources */,
 				A25073171E3AF885008DD866 /* ProfileViewController.swift in Sources */,
 				A295CAFD1E400E620007AF85 /* UserTableViewCell.swift in Sources */,
 				A25073151E3AD61E008DD866 /* EventAnnotation.swift in Sources */,

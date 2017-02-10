@@ -74,14 +74,14 @@ class DatabaseHelper {
                         if firebaseId != AuthHelper.Instance.idForCurrentUser() {
                             if let userData = value as? NSDictionary {
                                 if let email = userData["email"] as? String {
-                                    if let facebookId = userData["id"] as? String {
+//                                    if let facebookId = userData["id"] as? String {
                                         if let name = userData["name"] as? String {
-                                            if let profilePicture = userData["picture"] as? String {
-                                                let user = User(firebaseId: firebaseId, facebookId: facebookId, name: name, email: email, profilePicture: profilePicture)
+//                                            if let profilePicture = userData["picture"] as? String {
+                                                let user = User(firebaseId: firebaseId, name: name, email: email)
                                                 users.append(user)
                                             }
-                                        }
-                                    }
+//                                        }
+//                                    }
                                 }
                             }
                         }
@@ -105,15 +105,15 @@ class DatabaseHelper {
                                 print(userData)
                                 if userData["couple"] == nil {
                                     if let email = userData["email"] as? String {
-                                        if let facebookId = userData["id"] as? String {
+//                                        if let facebookId = userData["id"] as? String {
                                             if let name = userData["name"] as? String {
-                                                if let profilePicture = userData["picture"] as? String {
-                                                    let user = User(firebaseId: firebaseId, facebookId: facebookId, name: name, email: email, profilePicture: profilePicture)
+//                                                if let profilePicture = userData["picture"] as? String {
+                                                    let user = User(firebaseId: firebaseId,  name: name, email: email)
                                                     users.append(user)
                                                 }
                                             }
-                                        }
-                                    }
+//                                        }
+//                                    }
                                 }
                             }
                         }
@@ -129,16 +129,16 @@ class DatabaseHelper {
         usersRef.child(uid).observeSingleEvent(of: FIRDataEventType.value) { (snapshot: FIRDataSnapshot) in
             if let userData = snapshot.value as? NSDictionary {
                 if let email = userData["email"] as? String {
-                    if let facebookId = userData["id"] as? String {
+//                    if let facebookId = userData["id"] as? String {
                         if let name = userData["name"] as? String {
-                            if let profilePicture = userData["picture"] as? String {
-                                let user = User(firebaseId: uid, facebookId: facebookId, name: name, email: email, profilePicture: profilePicture)
+//                            if let profilePicture = userData["picture"] as? String {
+                                let user = User(firebaseId: uid, name: name, email: email)
                                 self.fetchSingleUserDelegate?.dataReceived(user: user)
                             }
                         }
                     }
-                }
-            }
+//                }
+//            }
         }
     }
     

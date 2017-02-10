@@ -17,6 +17,9 @@ class LoginViewController: UIViewController {
     //MARK: - IBOutlets
     
     @IBOutlet weak var prineyLogo: UIImageView!
+    @IBOutlet weak var signUpButton: UIButton!
+    @IBOutlet weak var emailTextField: UITextField!
+    @IBOutlet weak var passwordTextField: UITextField!
     
     //MARK: - View Lifecycles
     override func viewDidLoad() {
@@ -46,72 +49,14 @@ class LoginViewController: UIViewController {
         view.addSubview(customFBButton)
 
         
-        customFBButton.bottomAnchor.constraint(equalTo: prineyLogo.bottomAnchor, constant: 50).isActive = true
-        customFBButton.centerXAnchor.constraint(equalTo: prineyLogo.centerXAnchor, constant: 0).isActive = true
+        customFBButton.bottomAnchor.constraint(equalTo: signUpButton.bottomAnchor, constant: 75).isActive = true
+        customFBButton.centerXAnchor.constraint(equalTo: signUpButton.centerXAnchor, constant: 0).isActive = true
         customFBButton.leadingAnchor.constraint(equalTo: self.view.layoutMarginsGuide.leadingAnchor, constant: 16).isActive = true
         customFBButton.trailingAnchor.constraint(equalTo: self.view.layoutMarginsGuide.trailingAnchor, constant: -16).isActive = true
         customFBButton.heightAnchor.constraint(equalToConstant: 50).isActive = true
         
         customFBButton.addTarget(self, action: #selector(handleCustomFBLogin), for: .touchUpInside)
     }
-    
-//    func setupTextFields(triggerPlaceholder: String, triggerTitle: String, routinePlaceholder: String, routineTitle: String, tintColor: UIColor, selectedTitleColor: UIColor, selectedLineColor: UIColor, textColor: UIColor) {
-//        
-//        let textFieldWidth: CGFloat = 250
-//        let textFieldHeight: CGFloat = 45
-//        let textFieldSize = CGSize(width: textFieldWidth, height: textFieldHeight)
-//        
-//        let middleOfScreenX = view.frame.origin.x + view.frame.size.width/2
-//        let middleOfScreenY = view.frame.origin.y + view.frame.size.height/2
-//        
-//        let triggerTextFieldPoint = CGPoint(x:  middleOfScreenX - textFieldWidth/2, y:  middleOfScreenY - textFieldHeight/2 - 25)
-//        
-//        let routineTextFieldPoint = CGPoint(x:  middleOfScreenX - textFieldWidth/2, y:  middleOfScreenY - textFieldHeight/2 + 25)
-//        
-//        let triggerTextFieldRect = CGRect(origin: triggerTextFieldPoint, size: textFieldSize)
-//        triggerTextField = SkyFloatingLabelTextField(frame: triggerTextFieldRect)
-//        triggerTextField?.placeholder = triggerPlaceholder
-//        triggerTextField?.title = triggerTitle
-//        triggerTextField?.tintColor = tintColor
-//        triggerTextField?.selectedTitleColor = selectedTitleColor
-//        triggerTextField?.selectedLineColor = selectedLineColor
-//        triggerTextField?.textColor = textColor
-//        
-//        let routineTextFieldRect = CGRect(origin: routineTextFieldPoint, size: textFieldSize)
-//        routineTextField = SkyFloatingLabelTextField(frame: routineTextFieldRect)
-//        routineTextField?.placeholder = routinePlaceholder
-//        routineTextField?.title = routineTitle
-//        routineTextField?.tintColor = tintColor
-//        routineTextField?.selectedTitleColor = selectedTitleColor
-//        routineTextField?.selectedLineColor = selectedLineColor
-//        routineTextField?.textColor = textColor
-//        
-//        
-//        guard triggerTextField != nil else {
-//            print("Error producing triggerTextField")
-//            return
-//        }
-//        
-//        guard routineTextField != nil else {
-//            print("Error producing routineTextField")
-//            return
-//        }
-//        
-//        triggerTextField?.delegate = self
-//        routineTextField?.delegate = self
-//        
-//        if let system = system {
-//            triggerTextField?.text = system.trigger
-//            routineTextField?.text = system.routine
-//        } else {
-//            triggerTextField?.text = ""
-//            routineTextField?.text = ""
-//        }
-//        
-//        self.view.addSubview(triggerTextField!)
-//        self.view.addSubview(routineTextField!)
-//    }
-
     
     func handleCustomFBLogin() {
         let readPermissions = ["email", "public_profile"]
@@ -171,6 +116,45 @@ class LoginViewController: UIViewController {
             })
         })
     }
+    
+    //MARK: - IBActions
+    
+    @IBAction func login(_ sender: UIButton) {
+        guard let email = emailTextField.text else { return }
+        guard let password = passwordTextField.text else { return }
+        
+        if email != "" && password != "" {
+            
+            AuthHelper.Instance.logIn(email: email, password: password, loginHandler: { (message) in
+                
+                if message != nil {
+                    self.alertUser(title: "Problem with Authentication", message: message!)
+                } else {
+                    
+                    self.emailTextField.text = ""
+                    self.passwordTextField.text = ""
+                    
+                    print("Logging in")
+                    self.dismiss(animated: true, completion: nil)
+                }
+            })
+        } else {
+            alertUser(title: "Email and Password are required.", message: "Please enter email and password in the fields")
+        }
+    }
+
+    @IBAction func signUp(_ sender: UIButton) {
+        self.performSegue(withIdentifier: "signUpSegue", sender: self)
+    }
+    
+    private func alertUser(title: String, message: String) {
+        let alertController = UIAlertController(title: title, message: message, preferredStyle: .alert)
+        let okAction = UIAlertAction(title: "OK", style: .default, handler: nil)
+        alertController.addAction(okAction)
+        present(alertController, animated: true, completion: nil)
+        
+    }
+    
 
 }
 
