@@ -35,7 +35,7 @@ class MapViewController: UIViewController {
         prepareLocationManager()
         checkLocationStatus()
         prepareSearchBar()
-//        prepareEventHandler()
+        prepareEventHandler()
     }
     
     
@@ -53,6 +53,7 @@ class MapViewController: UIViewController {
             self.userIsInCouple = couplesKeyExists
             guard self.userIsInCouple != nil else { return }
             if self.userIsInCouple! {
+        
                 EventHandler.Instance.observeEventsForCurrentUser()
             } else {
                 self.alertUser(title: "Sorry", message: "You Aren't In A Couple")
